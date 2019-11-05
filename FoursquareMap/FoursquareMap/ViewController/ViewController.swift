@@ -17,9 +17,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var citySearchBar: UISearchBar!
     private let locationManager = CLLocationManager()
+    @IBOutlet weak var imageCollection: UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    private func loadData() {
+        
     }
 }
 

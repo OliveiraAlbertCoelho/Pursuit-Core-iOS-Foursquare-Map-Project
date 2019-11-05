@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		505A44B2237212ED00A75CCD /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505A44B1237212ED00A75CCD /* ImageCell.swift */; };
 		50F022452370B31A00C1C4D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F022442370B31A00C1C4D3 /* AppDelegate.swift */; };
 		50F022472370B31A00C1C4D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F022462370B31A00C1C4D3 /* SceneDelegate.swift */; };
 		50F022492370B31A00C1C4D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F022482370B31A00C1C4D3 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		505A44B1237212ED00A75CCD /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		50F022412370B31A00C1C4D3 /* FoursquareMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoursquareMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F022442370B31A00C1C4D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50F022462370B31A00C1C4D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		505A44B0237212D000A75CCD /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				505A44B1237212ED00A75CCD /* ImageCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
 		50F022382370B31A00C1C4D3 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +99,7 @@
 		50F022432370B31A00C1C4D3 /* FoursquareMap */ = {
 			isa = PBXGroup;
 			children = (
+				505A44B0237212D000A75CCD /* CustomCell */,
 				50F0226A2370DE0200C1C4D3 /* APIHelper */,
 				50F022692370DDF500C1C4D3 /* ViewController */,
 				50F022682370DDEE00C1C4D3 /* Model */,
@@ -241,6 +252,7 @@
 			files = (
 				50F0226C2370DE2700C1C4D3 /* LocationsModel.swift in Sources */,
 				50F022492370B31A00C1C4D3 /* ViewController.swift in Sources */,
+				505A44B2237212ED00A75CCD /* ImageCell.swift in Sources */,
 				50F022672370D7DD00C1C4D3 /* Secrets.swift in Sources */,
 				50F022722370E03C00C1C4D3 /* AppError.swift in Sources */,
 				50F022742370E04E00C1C4D3 /* LocationsAPI.swift in Sources */,

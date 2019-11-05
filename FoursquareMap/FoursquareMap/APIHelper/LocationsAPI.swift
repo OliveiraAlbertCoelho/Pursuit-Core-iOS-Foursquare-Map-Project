@@ -8,21 +8,13 @@
 
 import Foundation
 
-
-import Foundation
-
-
-
-
-class CardAPI {
+class LocationsAPI {
 
  
-    static let manager = CardAPI()
+    static let manager = LocationsAPI()
 
-    func getWeather(completionHandler: @escaping (Result<[flashCard], AppError>) -> ()) {
-        
-        let urlString = "https://5daf8b36f2946f001481d81c.mockapi.io/api/v2/cards"
-       
+    func getLocations(completionHandler: @escaping (Result<[Venues], AppError>) -> ()) {
+        let urlString = "https://api.foursquare.com/v2/venues/search?ll=40.7,-74&client_id=\(Secrets.client)&client_secret=\(Secrets.key)&v=20191104"
        
         guard let url = URL(string: urlString) else {
             completionHandler(.failure(.badURL))
@@ -34,8 +26,8 @@ class CardAPI {
                     completionHandler(.failure(error))
                 case .success(let data):
                     do {
-                    let card = try JSONDecoder().decode(CardsWrapper.self, from: data)
-                        completionHandler(.success(card.cards))
+                    let local = try JSONDecoder().decode(LocationsWrapper.self, from: data)
+                        completionHandler(.success(local.response ))
                     } catch {
                         print(error)
                         completionHandler(.failure(.other(rawError: error)))
