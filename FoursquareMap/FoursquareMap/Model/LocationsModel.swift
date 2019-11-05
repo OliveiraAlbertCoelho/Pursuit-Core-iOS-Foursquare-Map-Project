@@ -12,25 +12,25 @@ import Foundation
 
 
 struct LocationsWrapper: Codable {
-    let response: [Venues]
+    let response: Venues
 }
 struct Venues: Codable{
-    let venues: [Locations]
+    let venues: [Location]
 }
-class Locations: NSObject, Codable, MKAnnotation{
+class Location: NSObject, Codable, MKAnnotation{
     let id: String
     let name: String
-    private let position: String
-    @objc var coordinate: CLLocationCoordinate2D{
-         let latLong = position.components(separatedBy: ",").map{ $0.trimmingCharacters(in: .whitespacesAndNewlines)}.map{Double($0)}
-         guard latLong.count == 2,
-             let lat = latLong[0],
-             let long = latLong[1] else {return CLLocationCoordinate2D.init()}
-         return CLLocationCoordinate2D(latitude: lat, longitude: long)
+    let location: Coords
+    var coordinate: CLLocationCoordinate2D{
+        return CLLocationCoordinate2D(latitude: location.lat, longitude: location.lng)
      }
      var hasValidCoordinates: Bool{
          return coordinate.latitude != 0 && coordinate.longitude != 0
-         
      }
     
+}
+struct Coords: Codable {
+    let lat: Double
+    let lng: Double
+ 
 }

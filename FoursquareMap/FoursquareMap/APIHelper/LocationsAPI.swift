@@ -13,8 +13,9 @@ class LocationsAPI {
  
     static let manager = LocationsAPI()
 
-    func getLocations(completionHandler: @escaping (Result<[Venues], AppError>) -> ()) {
-        let urlString = "https://api.foursquare.com/v2/venues/search?ll=40.7,-74&client_id=\(Secrets.client)&client_secret=\(Secrets.key)&v=20191104"
+    func getLocations(search: String, completionHandler: @escaping (Result<[Location], AppError>) -> ()) {
+        let fixedString = search.replacingOccurrences(of: " ", with: "-")
+        let urlString = "https://api.foursquare.com/v2/venues/search?ll=40.7,-74&client_id=\(Secrets.client)&client_secret=\(Secrets.key)&v=20191104&query=\(fixedString)"
        
         guard let url = URL(string: urlString) else {
             completionHandler(.failure(.badURL))
@@ -27,7 +28,7 @@ class LocationsAPI {
                 case .success(let data):
                     do {
                     let local = try JSONDecoder().decode(LocationsWrapper.self, from: data)
-                        completionHandler(.success(local.response ))
+                        completionHandler(.success(local.response.venues ))
                     } catch {
                         print(error)
                         completionHandler(.failure(.other(rawError: error)))

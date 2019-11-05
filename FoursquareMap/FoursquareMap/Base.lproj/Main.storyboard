@@ -35,7 +35,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.69511544700000005" green="0.78320533039999995" blue="0.87844616170000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dXV-Hm-feB">
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dXV-Hm-feB">
                                 <rect key="frame" x="0.0" y="703" width="414" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2As-rI-M0G">
@@ -45,7 +45,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="h1m-ss-sza" customClass="ImageCell" customModule="FoursquareMap" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="h1m-ss-sza" customClass="ImageCell" customModule="FoursquareMap" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="96" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eAL-ui-4hP">
@@ -62,6 +62,7 @@
                                         <size key="customSize" width="96" height="100"/>
                                         <connections>
                                             <outlet property="squareImage" destination="eAL-ui-4hP" id="TxX-zo-NIx"/>
+                                            <outlet property="venueImage" destination="adB-IL-ZC5" id="tSF-3n-Oak"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
