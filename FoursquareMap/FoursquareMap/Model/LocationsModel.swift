@@ -21,6 +21,7 @@ class Location: NSObject, Codable, MKAnnotation{
     let id: String
     let name: String
     let location: Coords
+    let categories: [Categories]
     var coordinate: CLLocationCoordinate2D{
         return CLLocationCoordinate2D(latitude: location.lat, longitude: location.lng)
      }
@@ -33,4 +34,11 @@ struct Coords: Codable {
     let lat: Double
     let lng: Double
  
+}
+struct Categories: Codable{
+    let icon: Icon
+}
+struct Icon: Codable{
+    let prefix: String
+    let suffix: String
 }

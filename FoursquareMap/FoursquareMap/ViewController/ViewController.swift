@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     
     var location = [Location](){
         didSet{
-            imageCollection.reloadData()
             mapView.addAnnotations(location.filter{$0.hasValidCoordinates})
         }
         
@@ -36,7 +35,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        setUpDelegates()
+        locationAuthorization()
+           mapView.userTrackingMode = .follow
+        setUpDelegate()
     }
     private func loadData(search: String) {
         LocationsAPI.manager.getLocations(search: search){ (result) in
@@ -48,5 +49,74 @@ class ViewController: UIViewController {
             }
         }
     }
+    private func setUpDelegate(){
+        citySearchBar.delegate = self
+        venueSearchBar.delegate = self
+    }
+    private func locationAuthorization(){
+          let status = CLLocationManager.authorizationStatus()
+          switch status {
+          case .authorizedAlways, .authorizedWhenInUse:
+              mapView.showsUserLocation = true
+              locationManager.requestLocation()
+              locationManager.startUpdatingLocation()
+              locationManager.desiredAccuracy = kCLLocationAccuracyBest
+          default:
+              locationManager.requestWhenInUseAuthorization()
+          }
+      }
+}
+extension ViewController: CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("New Location: \(locations)")
+    }
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        print("Authorization status changed to \(status.rawValue)")
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            locationManager.requestLocation()
+        default:
+            break
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error: \(error)")
+    }
+    
+}
+extension ViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchString = searchText
+    }
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        venueSearchBar.showsCancelButton = true
+        return true
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        venueSearchBar.showsCancelButton = false
+        venueSearchBar.resignFirstResponder()
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+         let activityIndicator = UIActivityIndicatorView()
+         activityIndicator.center = self.view.center
+         activityIndicator.startAnimating()
+         self.view.addSubview(activityIndicator)
+         searchBar.resignFirstResponder()
+         let searchRequest = MKLocalSearch.Request()
+         searchRequest.naturalLanguageQuery = searchBar.text
+         let activeSearch = MKLocalSearch(request: searchRequest)
+         activeSearch.start { (response, error) in
+             activityIndicator.stopAnimating()
+             
+             if response == nil {
+                 print(error)
+             }else {
+                 let annotations = self.mapView.annotations
+                 self.mapView.removeAnnotations(annotations)
+                 self.loadData(search: searchBar.text!)
+             }
+         }
+     }
+
 }
 
