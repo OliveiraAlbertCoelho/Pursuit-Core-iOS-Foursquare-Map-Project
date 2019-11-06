@@ -10,6 +10,9 @@
 		505A44B2237212ED00A75CCD /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505A44B1237212ED00A75CCD /* ImageCell.swift */; };
 		505A44B42372305400A75CCD /* ResultListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505A44B32372305400A75CCD /* ResultListVC.swift */; };
 		509AC45D2373668D003F6D19 /* ZipCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509AC45C2373668D003F6D19 /* ZipCodeHelper.swift */; };
+		509AC45F23736F76003F6D19 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509AC45E23736F76003F6D19 /* ImageHelper.swift */; };
+		509AC46123737348003F6D19 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509AC46023737348003F6D19 /* ImageModel.swift */; };
+		509AC46323737491003F6D19 /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509AC46223737491003F6D19 /* ImageAPI.swift */; };
 		50F022452370B31A00C1C4D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F022442370B31A00C1C4D3 /* AppDelegate.swift */; };
 		50F022472370B31A00C1C4D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F022462370B31A00C1C4D3 /* SceneDelegate.swift */; };
 		50F022492370B31A00C1C4D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F022482370B31A00C1C4D3 /* ViewController.swift */; };
@@ -38,6 +41,9 @@
 		505A44B1237212ED00A75CCD /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		505A44B32372305400A75CCD /* ResultListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultListVC.swift; sourceTree = "<group>"; };
 		509AC45C2373668D003F6D19 /* ZipCodeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipCodeHelper.swift; sourceTree = "<group>"; };
+		509AC45E23736F76003F6D19 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		509AC46023737348003F6D19 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		509AC46223737491003F6D19 /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
 		50F022412370B31A00C1C4D3 /* FoursquareMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoursquareMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F022442370B31A00C1C4D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50F022462370B31A00C1C4D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				50F0226B2370DE2700C1C4D3 /* LocationsModel.swift */,
+				509AC46023737348003F6D19 /* ImageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,11 +153,13 @@
 		50F0226A2370DE0200C1C4D3 /* APIHelper */ = {
 			isa = PBXGroup;
 			children = (
+				509AC45E23736F76003F6D19 /* ImageHelper.swift */,
 				509AC45C2373668D003F6D19 /* ZipCodeHelper.swift */,
 				50F0226F2370E03C00C1C4D3 /* AppError.swift */,
 				50F0226D2370E03C00C1C4D3 /* NetworkHelper.swift */,
 				50F022662370D7DD00C1C4D3 /* Secrets.swift */,
 				50F022732370E04E00C1C4D3 /* LocationsAPI.swift */,
+				509AC46223737491003F6D19 /* ImageAPI.swift */,
 			);
 			path = APIHelper;
 			sourceTree = "<group>";
@@ -260,6 +269,7 @@
 				50F022492370B31A00C1C4D3 /* ViewController.swift in Sources */,
 				505A44B2237212ED00A75CCD /* ImageCell.swift in Sources */,
 				50F022672370D7DD00C1C4D3 /* Secrets.swift in Sources */,
+				509AC46323737491003F6D19 /* ImageAPI.swift in Sources */,
 				509AC45D2373668D003F6D19 /* ZipCodeHelper.swift in Sources */,
 				50F022722370E03C00C1C4D3 /* AppError.swift in Sources */,
 				505A44B42372305400A75CCD /* ResultListVC.swift in Sources */,
@@ -267,6 +277,8 @@
 				50F022452370B31A00C1C4D3 /* AppDelegate.swift in Sources */,
 				50F022702370E03C00C1C4D3 /* NetworkHelper.swift in Sources */,
 				50F022472370B31A00C1C4D3 /* SceneDelegate.swift in Sources */,
+				509AC46123737348003F6D19 /* ImageModel.swift in Sources */,
+				509AC45F23736F76003F6D19 /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     var currentLatLng = ""
     var location = [Location](){
         didSet{
+            imageCollection.reloadData()
             mapView.addAnnotations(location.filter{$0.hasValidCoordinates})
         }
         
@@ -26,12 +27,11 @@ class ViewController: UIViewController {
         }
     }
     @IBOutlet weak var venueSearchBar: UISearchBar!
-    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var citySearchBar: UISearchBar!
     @IBOutlet weak var imageCollection: UICollectionView!
     let initialLocation = CLLocation(latitude: 40.742054, longitude: -73.739417)
-    let searchRadius: CLLocationDistance = 6000
+    let searchRadius: CLLocationDistance = 1000
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +57,8 @@ class ViewController: UIViewController {
     private func setUpDelegate(){
         citySearchBar.delegate = self
         venueSearchBar.delegate = self
+        imageCollection.delegate = self
+        imageCollection.dataSource = self
     }
     private func locationAuthorization(){
         let status = CLLocationManager.authorizationStatus()
@@ -70,6 +72,7 @@ class ViewController: UIViewController {
             locationManager.requestWhenInUseAuthorization()
         }
     }
+  
 }
 extension ViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -103,22 +106,17 @@ extension ViewController: UISearchBarDelegate{
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
           func createAnnotations(){
-                let activityIndicator = UIActivityIndicatorView()
-                   activityIndicator.center = self.view.center
-                   activityIndicator.startAnimating()
-                   self.view.addSubview(activityIndicator)
                    searchBar.resignFirstResponder()
                    let searchRequest = MKLocalSearch.Request()
                    searchRequest.naturalLanguageQuery = searchBar.text
                    let activeSearch = MKLocalSearch(request: searchRequest)
                    activeSearch.start { (response, error) in
-                       activityIndicator.stopAnimating()
                        if response == nil {
                            print(error!)
                        }else {
                            let lat = self.locationManager.location?.coordinate.latitude.description
                            let lng = self.locationManager.location?.coordinate.longitude.description
-                            self.currentLatLng = "\(lat),\(lng)"
+                           self.currentLatLng = "\(lat!),\(lng!)"
                            let annotations = self.mapView.annotations
                            self.mapView.removeAnnotations(annotations)
                         self.loadData(search: self.venueSearchBar.text!, latLng: self.currentLatLng)
@@ -137,9 +135,43 @@ extension ViewController: UISearchBarDelegate{
                 case .success(let lat, let long, let name):
                     self.currentLatLng = "\(lat.description),\(long.description)"
                     print(self.currentLatLng)
+                    self.loadData(search: self.venueSearchBar.text!, latLng: self.currentLatLng)
                 }
             }
         }
+        
+    }
+}
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return location.count
+    }
     
-    }}
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = imageCollection.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCell
+        let data = location[indexPath.row]
+        
+        ImageAPI.manager.getImages(ID: data.id ){ (result) in
+        switch result{
+        case .failure(let error):
+            print(error)
+        case .success(let image):
+            ImageManager.manager.getImage(urlStr: image[0].imageInfo) { (result) in
+                DispatchQueue.main.async {
+                switch result{
+                    case .failure(let error):
+                        print(error)
+                    case .success(let image):
+                        cell.venueImage.image = image
+                    }
+                }
+            }
+            }}
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 100)
+    }
+    
+}
 
