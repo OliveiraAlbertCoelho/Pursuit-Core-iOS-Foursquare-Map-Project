@@ -15,6 +15,7 @@ class ImageAPI {
 
     func getImages(ID: String, completionHandler: @escaping (Result<[ImageInfo], AppError>) -> ()) {
         let urlString = "https://api.foursquare.com/v2/venues/\(ID)/photos?client_id=\(Secrets.client)&client_secret=\(Secrets.key)&v=20191104"
+        print("image \(urlString)")
         guard let url = URL(string: urlString) else {
             completionHandler(.failure(.badURL))
                       return

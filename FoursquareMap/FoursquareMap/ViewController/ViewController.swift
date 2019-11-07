@@ -18,33 +18,31 @@ class ViewController: UIViewController {
         didSet{
             imageCollection.reloadData()
             mapView.addAnnotations(location.filter{$0.hasValidCoordinates})
+            
         }
         
     }
-    var searchString: String? = nil {
-        didSet{
-            mapView.addAnnotations(location.filter{$0.hasValidCoordinates})
-        }
+    @IBAction func ResultVcAction(_ sender: UIButton) {
+        
     }
+    
+    
+    
+    let searchRadius: CLLocationDistance = 400
     @IBOutlet weak var venueSearchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var citySearchBar: UISearchBar!
     @IBOutlet weak var imageCollection: UICollectionView!
-    let initialLocation = CLLocation(latitude: 40.742054, longitude: -73.739417)
-    let searchRadius: CLLocationDistance = 1000
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         tagSearchBar()
         locationAuthorization()
         mapView.userTrackingMode = .follow
         setUpDelegate()
     }
-    private func tagSearchBar(){
-        venueSearchBar.tag = 0
-        citySearchBar.tag = 1
-    }
+    
     private func loadData(search: String,latLng: String) {
+        DispatchQueue.main.async {
         LocationsAPI.manager.getLocations(search: search, latLng: latLng){ (result) in
             switch result{
             case .failure(let error):
@@ -53,6 +51,7 @@ class ViewController: UIViewController {
                 self.location = venue
             }
         }
+                  }
     }
     private func setUpDelegate(){
         citySearchBar.delegate = self
@@ -93,9 +92,7 @@ extension ViewController: CLLocationManagerDelegate{
     
 }
 extension ViewController: UISearchBarDelegate{
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchString = searchText
-    }
+  
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         venueSearchBar.showsCancelButton = true
         return true
@@ -105,41 +102,25 @@ extension ViewController: UISearchBarDelegate{
         venueSearchBar.resignFirstResponder()
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-          func createAnnotations(){
                    searchBar.resignFirstResponder()
                    let searchRequest = MKLocalSearch.Request()
-                   searchRequest.naturalLanguageQuery = searchBar.text
+                   searchRequest.naturalLanguageQuery = citySearchBar.text
                    let activeSearch = MKLocalSearch(request: searchRequest)
                    activeSearch.start { (response, error) in
                        if response == nil {
                            print(error!)
                        }else {
-                           let lat = self.locationManager.location?.coordinate.latitude.description
-                           let lng = self.locationManager.location?.coordinate.longitude.description
-                           self.currentLatLng = "\(lat!),\(lng!)"
-                           let annotations = self.mapView.annotations
-                           self.mapView.removeAnnotations(annotations)
+                        let lat = response?.boundingRegion.center.latitude
+                        let lng = response?.boundingRegion.center.longitude
+                        self.currentLatLng = "\(lat!),\(lng!)"
+                        self.mapView.removeAnnotations(self.mapView.annotations)
+                        let newAnnotation = MKPointAnnotation()
+                        newAnnotation.coordinate = CLLocationCoordinate2D(latitude: lat!, longitude: lng!)
+                        let coordinateRegion = MKCoordinateRegion.init(center: newAnnotation.coordinate, latitudinalMeters: self.searchRadius * 2.0, longitudinalMeters: self.searchRadius * 2.0)
+                        self.mapView.setRegion(coordinateRegion, animated: true)
                         self.loadData(search: self.venueSearchBar.text!, latLng: self.currentLatLng)
                        }
-                   }
             }
-        
-        switch searchBar.tag{
-        case 0:
-        createAnnotations()
-        default:
-            ZipCodeHelper.getLatLong(fromZipCode:citySearchBar.text!) { (result) in
-                switch result{
-                case .failure(let error):
-                    print(error)
-                case .success(let lat, let long, let name):
-                    self.currentLatLng = "\(lat.description),\(long.description)"
-                    print(self.currentLatLng)
-                    self.loadData(search: self.venueSearchBar.text!, latLng: self.currentLatLng)
-                }
-            }
-        }
-        
     }
 }
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -150,13 +131,15 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = imageCollection.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCell
         let data = location[indexPath.row]
-        
         ImageAPI.manager.getImages(ID: data.id ){ (result) in
+            DispatchQueue.main.async {
         switch result{
         case .failure(let error):
             print(error)
         case .success(let image):
-            ImageManager.manager.getImage(urlStr: image[0].imageInfo) { (result) in
+        
+            if image.count != 0{
+                ImageManager.manager.getImage(urlStr: image[0].imageInfo) { (result) in
                 DispatchQueue.main.async {
                 switch result{
                     case .failure(let error):
@@ -166,7 +149,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                     }
                 }
             }
-            }}
+            }}}}
+                
+            
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

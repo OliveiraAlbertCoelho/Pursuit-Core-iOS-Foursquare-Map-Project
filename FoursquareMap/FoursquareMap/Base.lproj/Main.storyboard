@@ -23,12 +23,15 @@
                                 <rect key="frame" x="0.0" y="100" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZb-nL-G3L">
-                                <rect key="frame" x="384" y="44" width="30" height="56"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZb-nL-G3L">
+                                <rect key="frame" x="374" y="44" width="40" height="56"/>
                                 <color key="backgroundColor" red="0.69511544700000005" green="0.78320533039999995" blue="0.87844616170000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="ResultVcAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5jy-dr-CBu"/>
+                                </connections>
                             </button>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="2Gh-Vb-ZGD">
-                                <rect key="frame" x="0.0" y="44" width="384" height="56"/>
+                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Gh-Vb-ZGD">
+                                <rect key="frame" x="0.0" y="44" width="374" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dXV-Hm-feB">
@@ -117,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="1048" y="889"/>
         </scene>
-        <!--View Controller-->
+        <!--Result ListVC-->
         <scene sceneID="Sy6-3S-Syv">
             <objects>
-                <viewController id="wZH-6C-InI" sceneMemberID="viewController">
+                <viewController id="wZH-6C-InI" customClass="ResultListVC" customModule="FoursquareMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zoX-Qr-Vvg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pI5-Y5-pO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1710" y="139"/>
+            <point key="canvasLocation" x="1855" y="122"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ixU-ds-5D8">
