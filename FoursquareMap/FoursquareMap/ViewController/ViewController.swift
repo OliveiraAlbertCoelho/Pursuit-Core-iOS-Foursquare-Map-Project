@@ -14,16 +14,27 @@ import UIKit
 class ViewController: UIViewController {
     private let locationManager = CLLocationManager()
     var currentLatLng = ""
-    var location = [Location](){
+    var locations = [Location](){
         didSet{
             imageCollection.reloadData()
-            mapView.addAnnotations(location.filter{$0.hasValidCoordinates})
-            
+            locations.forEach { (location) in
+                let annotation = MKPointAnnotation()
+                annotation.title = location.name
+                annotation.coordinate = location.coordinate
+                mapView.addAnnotation(annotation)
+            }
+//            mapView.addAnnotations(locations.filter{$0.hasValidCoordinates})
+        
         }
         
     }
     @IBAction func ResultVcAction(_ sender: UIButton) {
-        
+        let resultVC = storyboard?.instantiateViewController(identifier: "result")as! ResultListVC
+                   
+                   
+               
+                      self.navigationController?.pushViewController(resultVC, animated: true)
+                      
     }
     
     
@@ -48,7 +59,7 @@ class ViewController: UIViewController {
             case .failure(let error):
                 print(error)
             case .success(let venue):
-                self.location = venue
+                self.locations = venue
             }
         }
                   }
@@ -113,24 +124,26 @@ extension ViewController: UISearchBarDelegate{
                         let lat = response?.boundingRegion.center.latitude
                         let lng = response?.boundingRegion.center.longitude
                         self.currentLatLng = "\(lat!),\(lng!)"
+   
                         self.mapView.removeAnnotations(self.mapView.annotations)
                         let newAnnotation = MKPointAnnotation()
                         newAnnotation.coordinate = CLLocationCoordinate2D(latitude: lat!, longitude: lng!)
                         let coordinateRegion = MKCoordinateRegion.init(center: newAnnotation.coordinate, latitudinalMeters: self.searchRadius * 2.0, longitudinalMeters: self.searchRadius * 2.0)
                         self.mapView.setRegion(coordinateRegion, animated: true)
                         self.loadData(search: self.venueSearchBar.text!, latLng: self.currentLatLng)
+                        print(coordinateRegion.center)
                        }
             }
     }
 }
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return location.count
+        return locations.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = imageCollection.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCell
-        let data = location[indexPath.row]
+        let data = locations[indexPath.row]
         ImageAPI.manager.getImages(ID: data.id ){ (result) in
             DispatchQueue.main.async {
         switch result{

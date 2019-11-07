@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FoursquareMap" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eRQ-bs-Uyf">
-                                <rect key="frame" x="0.0" y="156" width="414" height="657"/>
+                                <rect key="frame" x="0.0" y="200" width="414" height="613"/>
                             </mapView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="kcT-p4-Voh">
-                                <rect key="frame" x="0.0" y="100" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZb-nL-G3L">
@@ -92,7 +92,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="6Rc-w6-jP8"/>
+                    <navigationItem key="navigationItem" id="l1m-pu-8T0"/>
                     <connections>
                         <outlet property="citySearchBar" destination="kcT-p4-Voh" id="3Xt-mk-8EP"/>
                         <outlet property="imageCollection" destination="dXV-Hm-feB" id="fYx-od-pLd"/>
@@ -102,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="137.94642857142856"/>
         </scene>
         <!--Item-->
         <scene sceneID="jPZ-Uj-KsM">
@@ -123,7 +123,7 @@
         <!--Result ListVC-->
         <scene sceneID="Sy6-3S-Syv">
             <objects>
-                <viewController id="wZH-6C-InI" customClass="ResultListVC" customModule="FoursquareMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="result" id="wZH-6C-InI" customClass="ResultListVC" customModule="FoursquareMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zoX-Qr-Vvg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pI5-Y5-pO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1855" y="122"/>
+            <point key="canvasLocation" x="2763.768115942029" y="121.875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ixU-ds-5D8">
@@ -146,13 +146,32 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="15N-tR-bfo"/>
+                        <segue destination="vUT-kx-gei" kind="relationship" relationship="viewControllers" id="15N-tR-bfo"/>
                         <segue destination="kPp-we-7Tq" kind="relationship" relationship="viewControllers" id="bVn-mm-ytT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31e-jE-oYf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="fKD-Hf-B48">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vUT-kx-gei" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="6Rc-w6-jP8"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eq8-ki-M3W">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Mze-nc-H5T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gob-pt-dTj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>

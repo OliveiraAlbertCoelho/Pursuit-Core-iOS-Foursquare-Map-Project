@@ -25,10 +25,6 @@ class Location: NSObject, Codable, MKAnnotation{
     var coordinate: CLLocationCoordinate2D{
         return CLLocationCoordinate2D(latitude: location.lat, longitude: location.lng)
      }
-     var hasValidCoordinates: Bool{
-         return coordinate.latitude != 0 && coordinate.longitude != 0
-     }
-    
 }
 struct Coords: Codable {
     let lat: Double
