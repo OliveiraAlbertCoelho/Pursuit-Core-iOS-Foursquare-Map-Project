@@ -31,10 +31,7 @@ class ViewController: UIViewController {
     @IBAction func ResultVcAction(_ sender: UIButton) {
         let resultVC = storyboard?.instantiateViewController(identifier: "result")as! ResultListVC
         resultVC.venues = locations
-        
-        
         self.navigationController?.pushViewController(resultVC, animated: true)
-        
     }
     
     
@@ -47,9 +44,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         setUpDelegate()
         locationAuthorization()
         mapView.userTrackingMode = .follow
-        setUpDelegate()
     }
     
     private func loadData(search: String,latLng: String) {
@@ -65,6 +62,8 @@ class ViewController: UIViewController {
         }
     }
     private func setUpDelegate(){
+        mapView.delegate = self
+        locationManager.delegate = self
         citySearchBar.delegate = self
         venueSearchBar.delegate = self
         imageCollection.delegate = self
@@ -78,6 +77,7 @@ class ViewController: UIViewController {
             locationManager.requestLocation()
             locationManager.startUpdatingLocation()
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
+
         default:
             locationManager.requestWhenInUseAuthorization()
         }
@@ -104,10 +104,6 @@ extension ViewController: CLLocationManagerDelegate{
 }
 extension ViewController: UISearchBarDelegate{
     
-//    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-//        venueSearchBar.showsCancelButton = true
-//        return true
-//    }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         venueSearchBar.showsCancelButton = false
         venueSearchBar.resignFirstResponder()
@@ -135,6 +131,9 @@ extension ViewController: UISearchBarDelegate{
         }
               searchBar.resignFirstResponder()
     }
+    
+}
+extension ViewController: MKMapViewDelegate{
     
 }
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
