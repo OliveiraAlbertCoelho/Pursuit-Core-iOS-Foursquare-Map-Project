@@ -27,7 +27,8 @@ class ImageAPI {
                 case .success(let data):
                     do {
                     let image = try JSONDecoder().decode(ImageModel.self, from: data)
-                        completionHandler(.success(image.response.photos.items ))
+    
+                        completionHandler(.success(image.response.photos.items))
                     } catch {
                         print(error)
                         completionHandler(.failure(.other(rawError: error)))

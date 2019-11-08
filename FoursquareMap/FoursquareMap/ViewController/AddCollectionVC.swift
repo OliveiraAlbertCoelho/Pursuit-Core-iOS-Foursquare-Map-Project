@@ -27,14 +27,15 @@ class AddCollectionVC: UIViewController {
     
         @IBAction func saveAction(sender: UIBarButtonItem) {
             if let text = userText.text{
+                if text.isEmpty{
+                    let alert = UIAlertController(title: "", message: "Please input a name", preferredStyle: .alert)
+                                  let cancel = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                                  alert.addAction(cancel)
+                                  present(alert, animated: true)
+                }else{
             let collection = CollectionModel(name: text, location: nil, ImageInfo: nil)
             try? CollectionPersistence.manager.saveData(info: collection)
-            }else {
-                let alert = UIAlertController(title: "", message: "Please input a name", preferredStyle: .alert)
-                let cancel = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-                alert.addAction(cancel)
-                present(alert, animated: true)
-            }
+                }}
             navigationController?.popViewController(animated: true)
         
     }}

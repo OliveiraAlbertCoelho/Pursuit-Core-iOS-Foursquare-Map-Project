@@ -13,7 +13,9 @@ import UIKit
 
 class ViewController: UIViewController {
     private let locationManager = CLLocationManager()
+    var newAnnotation = MKPointAnnotation()
     var currentLatLng = ""
+    var annotations = [MKAnnotation]()
     var locations = [Location](){
         didSet{
             imageCollection.reloadData()
@@ -21,10 +23,9 @@ class ViewController: UIViewController {
                 let annotation = MKPointAnnotation()
                 annotation.title = location.name
                 annotation.coordinate = location.coordinate
+                annotations.append(annotation)
                 mapView.addAnnotation(annotation)
             }
-            //            mapView.addAnnotations(locations.filter{$0.hasValidCoordinates})
-            
         }
         
     }
@@ -44,7 +45,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         setUpDelegate()
+        setUpDelegate()
         locationAuthorization()
         mapView.userTrackingMode = .follow
     }
@@ -77,7 +78,7 @@ class ViewController: UIViewController {
             locationManager.requestLocation()
             locationManager.startUpdatingLocation()
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
-
+            
         default:
             locationManager.requestWhenInUseAuthorization()
         }
@@ -121,19 +122,24 @@ extension ViewController: UISearchBarDelegate{
                 self.currentLatLng = "\(lat!),\(lng!)"
                 
                 self.mapView.removeAnnotations(self.mapView.annotations)
-                let newAnnotation = MKPointAnnotation()
-                newAnnotation.coordinate = CLLocationCoordinate2D(latitude: lat!, longitude: lng!)
-                let coordinateRegion = MKCoordinateRegion.init(center: newAnnotation.coordinate, latitudinalMeters: self.searchRadius * 2.0, longitudinalMeters: self.searchRadius * 2.0)
+                self.newAnnotation.coordinate = CLLocationCoordinate2D(latitude: lat!, longitude: lng!)
+                let coordinateRegion = MKCoordinateRegion.init(center: self.newAnnotation.coordinate, latitudinalMeters: self.searchRadius * 2.0, longitudinalMeters: self.searchRadius * 2.0)
                 self.mapView.setRegion(coordinateRegion, animated: true)
                 self.loadData(search: self.venueSearchBar.text!, latLng: self.currentLatLng)
                 print(coordinateRegion.center)
             }
         }
-              searchBar.resignFirstResponder()
+        searchBar.resignFirstResponder()
     }
     
 }
 extension ViewController: MKMapViewDelegate{
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let  selected = locations.filter({$0.name == view.annotation?.title})
+        let detailVC = storyboard?.instantiateViewController(identifier: "detailVc")as! VenueDetailVc
+        detailVC.venue = selected[0]
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }    
     
 }
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -152,25 +158,31 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                     cell.venueImage.image = UIImage(named: "noImage")
                 case .success(let image):
                     
-                    if image.count != 0{
-                        ImageManager.manager.getImage(urlStr: image[0].imageInfo) { (result) in
+                    
+                    ImageManager.manager.getImage(urlStr: image.first?.imageInfo ?? "") { (result) in
                             DispatchQueue.main.async {
                                 switch result{
                                 case .failure(let error):
-                                    print(error)
+                                    cell.venueImage.image = UIImage(named: "noImage")
                                 case .success(let image):
                                     cell.venueImage.image = image
                                 }
                             }
                         }
-                    }}}}
-        
+                    }}}
         
         return cell
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100, height: 200)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let detailVC = storyboard?.instantiateViewController(identifier: "detailVc")as! VenueDetailVc
+//        detailVC.venue = locations[indexPath.row]
+            mapView.selectAnnotation(annotations[indexPath.row], animated: true)
+        mapView.
+//        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
 }
