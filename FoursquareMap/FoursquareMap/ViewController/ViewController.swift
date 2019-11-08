@@ -26,6 +26,7 @@ class ViewController: UIViewController {
                 annotations.append(annotation)
                 mapView.addAnnotation(annotation)
             }
+            self.mapView.showAnnotations(self.annotations, animated: true)
         }
         
     }
@@ -120,27 +121,23 @@ extension ViewController: UISearchBarDelegate{
                 let lat = response?.boundingRegion.center.latitude
                 let lng = response?.boundingRegion.center.longitude
                 self.currentLatLng = "\(lat!),\(lng!)"
-                
                 self.mapView.removeAnnotations(self.mapView.annotations)
-                self.newAnnotation.coordinate = CLLocationCoordinate2D(latitude: lat!, longitude: lng!)
-                let coordinateRegion = MKCoordinateRegion.init(center: self.newAnnotation.coordinate, latitudinalMeters: self.searchRadius * 2.0, longitudinalMeters: self.searchRadius * 2.0)
-                self.mapView.setRegion(coordinateRegion, animated: true)
+                self.annotations.removeAll()
                 self.loadData(search: self.venueSearchBar.text!, latLng: self.currentLatLng)
-                print(coordinateRegion.center)
             }
         }
         searchBar.resignFirstResponder()
     }
     
 }
-extension ViewController: MKMapViewDelegate{
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let  selected = locations.filter({$0.name == view.annotation?.title})
-        let detailVC = storyboard?.instantiateViewController(identifier: "detailVc")as! VenueDetailVc
-        detailVC.venue = selected[0]
-        self.navigationController?.pushViewController(detailVC, animated: true)
-    }    
+extension ViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
     
+                let  selected = locations.filter({$0.name == view.annotation?.title})
+                let detailVC = storyboard?.instantiateViewController(identifier: "detailVc")as! VenueDetailVc
+                detailVC.venue = selected[0]
+                self.navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -160,16 +157,16 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                     
                     
                     ImageManager.manager.getImage(urlStr: image.first?.imageInfo ?? "") { (result) in
-                            DispatchQueue.main.async {
-                                switch result{
-                                case .failure(let error):
-                                    cell.venueImage.image = UIImage(named: "noImage")
-                                case .success(let image):
-                                    cell.venueImage.image = image
-                                }
+                        DispatchQueue.main.async {
+                            switch result{
+                            case .failure(let error):
+                                cell.venueImage.image = UIImage(named: "noImage")
+                            case .success(let image):
+                                cell.venueImage.image = image
                             }
                         }
-                    }}}
+                    }
+                }}}
         
         return cell
         
@@ -178,12 +175,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return CGSize(width: 100, height: 200)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let detailVC = storyboard?.instantiateViewController(identifier: "detailVc")as! VenueDetailVc
-//        detailVC.venue = locations[indexPath.row]
-            mapView.selectAnnotation(annotations[indexPath.row], animated: true)
-        mapView.
-//        self.navigationController?.pushViewController(detailVC, animated: true)
+        let annotation = annotations[indexPath.row]
+        mapView.showAnnotations([annotation], animated: true)
+        mapView.selectAnnotation(annotation, animated: true)
     }
     
 }
 
+//                self.newAnnotation.coordinate = CLLocationCoordinate2D(latitude: lat!, longitude: lng!)
+//                let coordinateRegion = MKCoordinateRegion.init(center: self.newAnnotation.coordinate, latitudinalMeters: self.searchRadius * 2.0, longitudinalMeters: self.searchRadius * 2.0)
+//                self.mapView.setRegion(coordinateRegion, animated: true)
