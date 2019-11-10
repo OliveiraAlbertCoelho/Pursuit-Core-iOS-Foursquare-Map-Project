@@ -9,28 +9,45 @@
 import UIKit
 
 class FavoriteVenueVC: UIViewController {
+    //MARK: Variables
     var collection: CollectionModel?{
         didSet{
              venues = collection!.venues
-            print("ahhhhh\( venues?.count)")
-           
+            print("ahhhhh\( venues?.count ?? 200)")
         }
     }
     var venues: [Location]?{
         didSet{
         }
     }
+    
     @IBOutlet weak var resultTable: UITableView!
     override func viewDidLoad() {
-            super.viewDidLoad()
-            resultTable.delegate = self
-            resultTable.dataSource = self
-            resultTable.reloadData()
+        super.viewDidLoad()
+        setUpVC()
         }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        resultTable.reloadData()
+    }
+    private func setUpVC(){
+        resultTable.delegate = self
+        resultTable.dataSource = self
+                 
+    }
 }
+  //MARK: UITable Extensions
     extension FavoriteVenueVC: UITableViewDelegate, UITableViewDataSource{
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return venues!.count
+            guard let venue = venues else {
+                let alert = UIAlertController(title: "", message: "You have no saved venues in this collection", preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                alert.addAction(cancel)
+                present(alert, animated: true)
+                return 0
+            }
+            
+            return venue.count
         }
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = resultTable.dequeueReusableCell(withIdentifier: "favCell", for: indexPath)

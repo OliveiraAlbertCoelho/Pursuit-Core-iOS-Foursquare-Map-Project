@@ -16,6 +16,8 @@ struct LocationsWrapper: Codable {
 }
 struct Venues: Codable{
     let venues: [Location]
+    
+    
 }
 class Location: NSObject, Codable, MKAnnotation{
     let id: String
@@ -27,6 +29,7 @@ class Location: NSObject, Codable, MKAnnotation{
     var coordinate: CLLocationCoordinate2D{
         return CLLocationCoordinate2D(latitude: location.lat, longitude: location.lng)
      }
+  
 }
 struct Coords: Codable {
     let lat: Double

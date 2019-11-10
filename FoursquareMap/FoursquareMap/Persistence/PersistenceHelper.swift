@@ -10,9 +10,9 @@ import Foundation
 struct PersistenceHelper<T: Codable> {
     func getObjects() throws -> [T] {
         guard let data = FileManager.default.contents(atPath: url.path) else {
-            return [].reversed()
+            return []
         }
-        return try PropertyListDecoder().decode([T].self, from: data)
+        return try PropertyListDecoder().decode([T].self, from: data).reversed()
     }
     func save(newElement: T) throws {
         var elements = try getObjects()

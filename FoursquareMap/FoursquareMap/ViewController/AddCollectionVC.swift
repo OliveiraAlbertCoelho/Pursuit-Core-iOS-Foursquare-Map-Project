@@ -9,22 +9,23 @@
 import UIKit
 
 class AddCollectionVC: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUpView()
-        
-    }
-    
+    //MARK: - Variables
     @IBOutlet weak var userText: UITextField!
-    private func setUpView(){
-        self.navigationItem.title = "Create Collection"
-        self.navigationItem.rightBarButtonItem = CreateButton
-    }
-        lazy var CreateButton: UIBarButtonItem = {
-               var saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(saveAction(sender:)))
+     lazy var CreateButton: UIBarButtonItem = {
+               var saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: self, action: #selector(saveAction(sender:)))
                return saveButton
            }()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpView()
+    }
+    //MARK: - Functions
+    private func setUpView(){
+         self.navigationItem.title = "Create Collection"
+         self.navigationItem.rightBarButtonItem = CreateButton
+     }
+   
         @IBAction func saveAction(sender: UIBarButtonItem) {
             if let text = userText.text{
                 if text.isEmpty{

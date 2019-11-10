@@ -137,11 +137,11 @@
                                                         <constraint firstAttribute="width" constant="198" id="sD8-0c-Aud"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67t-9O-dBB">
-                                                    <rect key="frame" x="78" y="106" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67t-9O-dBB">
+                                                    <rect key="frame" x="0.0" y="106" width="209" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="3Ox-J6-19d"/>
-                                                        <constraint firstAttribute="width" constant="42" id="k1b-Ky-vad"/>
+                                                        <constraint firstAttribute="width" constant="209" id="DaR-Js-If4"/>
+                                                        <constraint firstAttribute="height" constant="21" id="blT-R9-aA6"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -149,10 +149,10 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="67t-9O-dBB" secondAttribute="bottom" constant="20" id="Alr-GJ-cyD"/>
-                                                <constraint firstItem="67t-9O-dBB" firstAttribute="top" secondItem="wBq-nC-QLb" secondAttribute="bottom" constant="8" id="KXY-ry-cf3"/>
+                                                <constraint firstItem="67t-9O-dBB" firstAttribute="leading" secondItem="Hlg-a7-b1f" secondAttribute="leading" id="beG-r5-6P7"/>
+                                                <constraint firstAttribute="bottom" secondItem="67t-9O-dBB" secondAttribute="bottom" constant="20" id="dgz-cY-FVH"/>
+                                                <constraint firstItem="67t-9O-dBB" firstAttribute="top" secondItem="wBq-nC-QLb" secondAttribute="bottom" constant="8" id="hwa-Mw-d9R"/>
                                                 <constraint firstItem="wBq-nC-QLb" firstAttribute="leading" secondItem="Hlg-a7-b1f" secondAttribute="leading" id="pgQ-dr-fmI"/>
-                                                <constraint firstItem="67t-9O-dBB" firstAttribute="leading" secondItem="Hlg-a7-b1f" secondAttribute="leading" constant="78" id="x7a-BH-BcJ"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="209" height="147"/>
@@ -180,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tlX-KP-lT0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="822.99107142857144"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="835.71428571428567"/>
         </scene>
         <!--Add Venue To CollectionVC-->
         <scene sceneID="Wef-sO-sDe">
@@ -235,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4VL-Q5-Bs1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2097" y="823"/>
+            <point key="canvasLocation" x="2800" y="836"/>
         </scene>
         <!--Add CollectionVC-->
         <scene sceneID="CFq-Qb-id2">
@@ -261,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXs-S9-EsB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="1508.7053571428571"/>
+            <point key="canvasLocation" x="1072" y="1531"/>
         </scene>
         <!--Favorite VenueVC-->
         <scene sceneID="6wn-K4-pMC">
@@ -271,7 +271,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aXq-BI-trX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aXq-BI-trX">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -310,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vn3-gw-4tW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1801" y="1561"/>
+            <point key="canvasLocation" x="1920" y="836"/>
         </scene>
         <!--Result ListVC-->
         <scene sceneID="Sy6-3S-Syv">

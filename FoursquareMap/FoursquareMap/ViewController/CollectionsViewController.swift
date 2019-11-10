@@ -9,32 +9,37 @@
 import UIKit
 
 class CollectionsViewController: UIViewController {
-
+    //MARK: - Variables
+    @IBOutlet weak var collectionsTable: UICollectionView!
+    lazy var saveButton: UIBarButtonItem = {
+           var saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(saveAction(sender:)))
+           return saveButton
+       }()
     var collection = [CollectionModel](){
         didSet{
             collectionsTable.reloadData()
         }
     }
     
+    //Mark: - ViewLoads
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = saveButton
-        collectionsTable.delegate = self
-        collectionsTable.dataSource = self
+        setUP()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
            loadData()
     }
-    @IBOutlet weak var collectionsTable: UICollectionView!
+    //MARK: -  Functions
+    private func setUP(){
+        navigationItem.rightBarButtonItem = saveButton
+              collectionsTable.delegate = self
+              collectionsTable.dataSource = self
+    }
     
-    lazy var saveButton: UIBarButtonItem = {
-           var saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(saveAction(sender:)))
-           return saveButton
-       }()
     @IBAction func saveAction(sender: UIBarButtonItem) {
         let addVc = storyboard?.instantiateViewController(identifier: "addVc")as! AddCollectionVC
-              self.navigationController?.pushViewController(addVc, animated: true)
+        self.navigationController?.pushViewController(addVc, animated: true)
     }
     private func loadData(){
          do {
@@ -45,6 +50,7 @@ class CollectionsViewController: UIViewController {
          }
     }
 
+   //MARK: - UICollectionView Extensions
 extension CollectionsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collection.count
@@ -60,7 +66,7 @@ extension CollectionsViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 200)
+        return CGSize(width: 300, height: 300)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let favVC = storyboard?.instantiateViewController(identifier: "favVC")as! FavoriteVenueVC
