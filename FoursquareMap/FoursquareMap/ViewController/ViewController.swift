@@ -151,6 +151,12 @@ extension ViewController: MKMapViewDelegate {
 //MARK: UICollectionViewDelegate Functions
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if locations.isEmpty && !currentLatLng.isEmpty{
+                     let alert = UIAlertController(title: "", message: "Seems we have no results for that search, Please try something else", preferredStyle: .alert)
+                     let cancel = UIAlertAction(title: "Got it", style: .cancel, handler: nil)
+                     alert.addAction(cancel)
+                     present(alert,animated: true)
+        }
         return locations.count
     }
     
