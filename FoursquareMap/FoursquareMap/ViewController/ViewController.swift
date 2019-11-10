@@ -12,6 +12,7 @@ import Foundation
 import UIKit
 
 class ViewController: UIViewController {
+    // MARK: - Variables
     private let locationManager = CLLocationManager()
     var currentLatLng = ""
     var annotations = [MKAnnotation]()
@@ -23,15 +24,17 @@ class ViewController: UIViewController {
         didSet{
             imageCollection.reloadData()
             locations.forEach { (location) in
-                let annotation = MKPointAnnotation()
-                annotation.title = location.name
-                annotation.coordinate = location.coordinate
-                annotations.append(annotation)
-                mapView.addAnnotation(annotation)
+            let annotation = MKPointAnnotation()
+            annotation.title = location.name
+            annotation.coordinate = location.coordinate
+            annotations.append(annotation)
+            mapView.addAnnotation(annotation)
             }
             self.mapView.showAnnotations(self.annotations, animated: true)
         }
     }
+    //MARK: - Buttons And ViewDidLoad
+    
     @IBAction func ResultVcAction(_ sender: UIButton) {
         if annotations.isEmpty{
             let alert = UIAlertController(title: "", message: "Please search for a valid venue", preferredStyle: .alert)
@@ -42,14 +45,14 @@ class ViewController: UIViewController {
             let resultVC = storyboard?.instantiateViewController(identifier: "result")as! ResultListVC
             resultVC.venues = locations
             self.navigationController?.pushViewController(resultVC, animated: true)
-        }}
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUpDelegate()
-        locationAuthorization()
-        tagSearchBar()
+        }
     }
-    
+    override func viewDidLoad() {
+         super.viewDidLoad()
+         setUpDelegate()
+         locationAuthorization()
+     }
+    // MARK: - Regular Functions
     private func loadData(search: String,latLng: String) {
         DispatchQueue.main.async {
             LocationsAPI.manager.getLocations(search: search, latLng: latLng){ (result) in
@@ -61,10 +64,6 @@ class ViewController: UIViewController {
                 }
             }
         }
-    }
-    private func tagSearchBar(){
-        venueSearchBar.tag = 0
-        citySearchBar.tag = 1
     }
     private func setUpDelegate(){
         mapView.delegate = self
@@ -88,8 +87,8 @@ class ViewController: UIViewController {
             locationManager.requestWhenInUseAuthorization()
         }
     }
-    
 }
+//MARK: CLLocationDelegate functions
 extension ViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("New Location: \(locations)")
@@ -106,8 +105,8 @@ extension ViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error: \(error)")
     }
-    
 }
+//MARK: UISearchBarDelegate functions
 extension ViewController: UISearchBarDelegate{
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -127,10 +126,10 @@ extension ViewController: UISearchBarDelegate{
             }
         }
         searchBar.resignFirstResponder()
-        disablesAutomaticKeyboardDismissal
     }
 
 }
+//MARK: MKMapViewDelegate Functions
 extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
         let  selected = locations.filter({$0.name == view.annotation?.title})
@@ -139,6 +138,7 @@ extension ViewController: MKMapViewDelegate {
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
+//MARK: UICollectionViewDelegate Functions
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return locations.count
@@ -165,13 +165,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                             }
                         }
                     }
-                }}}
-        
+                }
+            }
+        }
         return cell
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 200)
+        return CGSize(width: 150, height: 100)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let annotation = annotations[indexPath.row]

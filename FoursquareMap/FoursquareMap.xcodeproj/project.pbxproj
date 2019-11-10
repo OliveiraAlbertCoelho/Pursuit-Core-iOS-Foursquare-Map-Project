@@ -111,6 +111,14 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
+		5055E40A23787FE900521322 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				50F0224D2370B31B00C1C4D3 /* Assets.xcassets */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
 		505A44B0237212D000A75CCD /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,16 +152,16 @@
 		50F022432370B31A00C1C4D3 /* FoursquareMap */ = {
 			isa = PBXGroup;
 			children = (
+				5055E40A23787FE900521322 /* Supporting */,
 				50363F042374C9F800F1D226 /* Persistence */,
 				505A44B0237212D000A75CCD /* CustomCell */,
 				50F0226A2370DE0200C1C4D3 /* APIHelper */,
 				50F022692370DDF500C1C4D3 /* ViewController */,
 				50F022682370DDEE00C1C4D3 /* Model */,
-				50F022442370B31A00C1C4D3 /* AppDelegate.swift */,
-				50F022462370B31A00C1C4D3 /* SceneDelegate.swift */,
-				50F0224A2370B31A00C1C4D3 /* Main.storyboard */,
-				50F0224D2370B31B00C1C4D3 /* Assets.xcassets */,
 				50F0224F2370B31B00C1C4D3 /* LaunchScreen.storyboard */,
+				50F022442370B31A00C1C4D3 /* AppDelegate.swift */,
+				50F0224A2370B31A00C1C4D3 /* Main.storyboard */,
+				50F022462370B31A00C1C4D3 /* SceneDelegate.swift */,
 				50F022522370B31B00C1C4D3 /* Info.plist */,
 			);
 			path = FoursquareMap;
@@ -171,8 +179,8 @@
 		50F022682370DDEE00C1C4D3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				50F0226B2370DE2700C1C4D3 /* LocationsModel.swift */,
 				509AC46023737348003F6D19 /* ImageModel.swift */,
+				50F0226B2370DE2700C1C4D3 /* LocationsModel.swift */,
 				50B9F9D423763B4F000CC234 /* CollectionModel.swift */,
 			);
 			path = Model;
