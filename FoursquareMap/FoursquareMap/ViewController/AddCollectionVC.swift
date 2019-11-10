@@ -9,12 +9,12 @@
 import UIKit
 
 class AddCollectionVC: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-
+        
     }
+    
     @IBOutlet weak var userText: UITextField!
     private func setUpView(){
         self.navigationItem.title = "Create Collection"
@@ -33,9 +33,10 @@ class AddCollectionVC: UIViewController {
                                   alert.addAction(cancel)
                                   present(alert, animated: true)
                 }else{
-            let collection = CollectionModel(name: text, location: nil, ImageInfo: nil)
+                    let collection = CollectionModel(name: text, venues: nil)
             try? CollectionPersistence.manager.saveData(info: collection)
                 }}
             navigationController?.popViewController(animated: true)
         
-    }}
+    }
+}

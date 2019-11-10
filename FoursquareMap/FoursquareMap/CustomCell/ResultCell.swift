@@ -9,7 +9,6 @@
 import UIKit
 
 class ResultCell: UITableViewCell {
-
     @IBOutlet weak var venueImage: UIImageView!
     @IBOutlet weak var venueName: UILabel!
     @IBOutlet weak var categoryName: UILabel!

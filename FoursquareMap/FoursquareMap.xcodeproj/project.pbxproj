@@ -11,15 +11,19 @@
 		50363EF72374B51600F1D226 /* VenueDetailVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50363EF62374B51600F1D226 /* VenueDetailVc.swift */; };
 		50363EF92374BEAA00F1D226 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50363EF82374BEAA00F1D226 /* CollectionsViewController.swift */; };
 		50363EFB2374BF1200F1D226 /* VenueCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50363EFA2374BF1200F1D226 /* VenueCollectionCell.swift */; };
-		50363EFD2374C25000F1D226 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50363EFC2374C25000F1D226 /* CollectionModel.swift */; };
 		50363EFF2374C57F00F1D226 /* AddCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50363EFE2374C57F00F1D226 /* AddCollectionVC.swift */; };
 		50363F022374C9F500F1D226 /* CollectionPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50363F002374C9F400F1D226 /* CollectionPersistence.swift */; };
 		50363F032374C9F500F1D226 /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50363F012374C9F400F1D226 /* PersistenceHelper.swift */; };
 		505A44B2237212ED00A75CCD /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505A44B1237212ED00A75CCD /* ImageCell.swift */; };
 		505A44B42372305400A75CCD /* ResultListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505A44B32372305400A75CCD /* ResultListVC.swift */; };
+		507B29B923777BA900C4D8D2 /* FavoriteVenueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B29B823777BA900C4D8D2 /* FavoriteVenueVC.swift */; };
+		507B29BB23777BCD00C4D8D2 /* FavoriteVenueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B29BA23777BCD00C4D8D2 /* FavoriteVenueCell.swift */; };
 		509AC45F23736F76003F6D19 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509AC45E23736F76003F6D19 /* ImageHelper.swift */; };
 		509AC46123737348003F6D19 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509AC46023737348003F6D19 /* ImageModel.swift */; };
 		509AC46323737491003F6D19 /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509AC46223737491003F6D19 /* ImageAPI.swift */; };
+		50B9F9D523763B4F000CC234 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B9F9D423763B4F000CC234 /* CollectionModel.swift */; };
+		50C6983B2377724000B97587 /* AddCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C6983A2377724000B97587 /* AddCollectionViewCell.swift */; };
+		50C6983D2377743400B97587 /* AddVenueToCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C6983C2377743400B97587 /* AddVenueToCollectionVC.swift */; };
 		50F022452370B31A00C1C4D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F022442370B31A00C1C4D3 /* AppDelegate.swift */; };
 		50F022472370B31A00C1C4D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F022462370B31A00C1C4D3 /* SceneDelegate.swift */; };
 		50F022492370B31A00C1C4D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F022482370B31A00C1C4D3 /* ViewController.swift */; };
@@ -49,15 +53,19 @@
 		50363EF62374B51600F1D226 /* VenueDetailVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailVc.swift; sourceTree = "<group>"; };
 		50363EF82374BEAA00F1D226 /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
 		50363EFA2374BF1200F1D226 /* VenueCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueCollectionCell.swift; sourceTree = "<group>"; };
-		50363EFC2374C25000F1D226 /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
 		50363EFE2374C57F00F1D226 /* AddCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionVC.swift; sourceTree = "<group>"; };
 		50363F002374C9F400F1D226 /* CollectionPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionPersistence.swift; sourceTree = "<group>"; };
 		50363F012374C9F400F1D226 /* PersistenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		505A44B1237212ED00A75CCD /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		505A44B32372305400A75CCD /* ResultListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultListVC.swift; sourceTree = "<group>"; };
+		507B29B823777BA900C4D8D2 /* FavoriteVenueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVenueVC.swift; sourceTree = "<group>"; };
+		507B29BA23777BCD00C4D8D2 /* FavoriteVenueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVenueCell.swift; sourceTree = "<group>"; };
 		509AC45E23736F76003F6D19 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		509AC46023737348003F6D19 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		509AC46223737491003F6D19 /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
+		50B9F9D423763B4F000CC234 /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
+		50C6983A2377724000B97587 /* AddCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionViewCell.swift; sourceTree = "<group>"; };
+		50C6983C2377743400B97587 /* AddVenueToCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVenueToCollectionVC.swift; sourceTree = "<group>"; };
 		50F022412370B31A00C1C4D3 /* FoursquareMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoursquareMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F022442370B31A00C1C4D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50F022462370B31A00C1C4D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +117,8 @@
 				505A44B1237212ED00A75CCD /* ImageCell.swift */,
 				50363EF42374A80F00F1D226 /* ResultCell.swift */,
 				50363EFA2374BF1200F1D226 /* VenueCollectionCell.swift */,
+				50C6983A2377724000B97587 /* AddCollectionViewCell.swift */,
+				507B29BA23777BCD00C4D8D2 /* FavoriteVenueCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -163,7 +173,7 @@
 			children = (
 				50F0226B2370DE2700C1C4D3 /* LocationsModel.swift */,
 				509AC46023737348003F6D19 /* ImageModel.swift */,
-				50363EFC2374C25000F1D226 /* CollectionModel.swift */,
+				50B9F9D423763B4F000CC234 /* CollectionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +186,8 @@
 				50363EF62374B51600F1D226 /* VenueDetailVc.swift */,
 				50363EF82374BEAA00F1D226 /* CollectionsViewController.swift */,
 				50363EFE2374C57F00F1D226 /* AddCollectionVC.swift */,
+				50C6983C2377743400B97587 /* AddVenueToCollectionVC.swift */,
+				507B29B823777BA900C4D8D2 /* FavoriteVenueVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -295,12 +307,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				50F0226C2370DE2700C1C4D3 /* LocationsModel.swift in Sources */,
+				50C6983D2377743400B97587 /* AddVenueToCollectionVC.swift in Sources */,
 				50363EF72374B51600F1D226 /* VenueDetailVc.swift in Sources */,
 				50363EFF2374C57F00F1D226 /* AddCollectionVC.swift in Sources */,
 				50F022492370B31A00C1C4D3 /* ViewController.swift in Sources */,
+				507B29BB23777BCD00C4D8D2 /* FavoriteVenueCell.swift in Sources */,
 				505A44B2237212ED00A75CCD /* ImageCell.swift in Sources */,
 				50F022672370D7DD00C1C4D3 /* Secrets.swift in Sources */,
-				50363EFD2374C25000F1D226 /* CollectionModel.swift in Sources */,
+				50B9F9D523763B4F000CC234 /* CollectionModel.swift in Sources */,
 				509AC46323737491003F6D19 /* ImageAPI.swift in Sources */,
 				50F022722370E03C00C1C4D3 /* AppError.swift in Sources */,
 				505A44B42372305400A75CCD /* ResultListVC.swift in Sources */,
@@ -312,6 +326,8 @@
 				50F022472370B31A00C1C4D3 /* SceneDelegate.swift in Sources */,
 				509AC46123737348003F6D19 /* ImageModel.swift in Sources */,
 				50363EFB2374BF1200F1D226 /* VenueCollectionCell.swift in Sources */,
+				50C6983B2377724000B97587 /* AddCollectionViewCell.swift in Sources */,
+				507B29B923777BA900C4D8D2 /* FavoriteVenueVC.swift in Sources */,
 				50363F022374C9F500F1D226 /* CollectionPersistence.swift in Sources */,
 				50363EF52374A80F00F1D226 /* ResultCell.swift in Sources */,
 				509AC45F23736F76003F6D19 /* ImageHelper.swift in Sources */,

@@ -160,6 +160,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                         DispatchQueue.main.async {
                             switch result{
                             case .failure(let error):
+                                print(error)
                                 cell.venueImage.image = UIImage(named: "noImage")
                             case .success(let image):
                                 cell.venueImage.image = image

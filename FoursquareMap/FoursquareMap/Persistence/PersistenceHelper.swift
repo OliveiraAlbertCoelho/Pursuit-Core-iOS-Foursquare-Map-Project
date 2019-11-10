@@ -10,7 +10,7 @@ import Foundation
 struct PersistenceHelper<T: Codable> {
     func getObjects() throws -> [T] {
         guard let data = FileManager.default.contents(atPath: url.path) else {
-            return []
+            return [].reversed()
         }
         return try PropertyListDecoder().decode([T].self, from: data)
     }

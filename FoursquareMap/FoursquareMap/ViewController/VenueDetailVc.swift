@@ -25,5 +25,8 @@ class VenueDetailVc: UIViewController {
     @IBOutlet weak var venueImage: UIImageView!
     @IBOutlet weak var venueName: UILabel!
     @IBAction func addButton(_ sender: UIButton) {
+        let addVc = storyboard?.instantiateViewController(identifier: "addVenueVc")as! AddVenueToCollectionVC
+            addVc.venue = venue
+               self.navigationController?.pushViewController(addVc, animated: true)
     }
 }

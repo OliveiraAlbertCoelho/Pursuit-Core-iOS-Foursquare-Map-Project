@@ -1,15 +1,14 @@
 //
-//  collectionModel.swift
+//  CollectionModel.swift
 //  FoursquareMap
 //
-//  Created by albert coelho oliveira on 11/7/19.
+//  Created by albert coelho oliveira on 11/8/19.
 //  Copyright © 2019 albert coelho oliveira. All rights reserved.
 //
 
 import Foundation
 
 struct CollectionModel: Codable{
-    let name: String
-    let location: Location?
-    let ImageInfo: ImageInfo?
+    let name: String?
+    var venues: [Location]?
 }

@@ -53,6 +53,7 @@ extension CollectionsViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionsTable.dequeueReusableCell(withReuseIdentifier: "collecCell", for: indexPath) as! VenueCollectionCell
         let data = collection[indexPath.row]
+        print(data.venues)
         cell.collectionName.text = data.name
         cell.backgroundColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
         return cell
@@ -60,5 +61,10 @@ extension CollectionsViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 150, height: 200)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let favVC = storyboard?.instantiateViewController(identifier: "favVC")as! FavoriteVenueVC
+        favVC.collection = collection[indexPath.row]
+           self.navigationController?.pushViewController(favVC, animated: true)
     }
 }

@@ -21,6 +21,7 @@ class Location: NSObject, Codable, MKAnnotation{
     let id: String
     let name: String
     let location: Coords
+    let image: ImageInfo?
     var coordinate: CLLocationCoordinate2D{
         return CLLocationCoordinate2D(latitude: location.lat, longitude: location.lng)
      }
