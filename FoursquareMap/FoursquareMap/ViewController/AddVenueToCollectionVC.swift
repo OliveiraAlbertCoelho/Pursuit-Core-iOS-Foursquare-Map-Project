@@ -64,7 +64,9 @@ extension AddVenueToCollectionVC: UICollectionViewDelegate, UICollectionViewData
         var selected = collections![indexPath.row]
         if selected.checkVenues(Id: venue!.id){
             let alert = UIAlertController(title: "", message: "You already have this venue saved", preferredStyle: .alert)
-            let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let cancel = UIAlertAction(title: "OK", style: .cancel){ (action) in
+                self.navigationController?.popViewController(animated: true)
+            }
             alert.addAction(cancel)
             present(alert,animated: true)
         }else {
@@ -76,10 +78,16 @@ extension AddVenueToCollectionVC: UICollectionViewDelegate, UICollectionViewData
                 let newVenues = CollectionModel(name: selected.name, venues: [venue!])
                 selected = newVenues
             }
-            
-            
+            let alert = UIAlertController(title: "", message: "Saved", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) in
+                self.navigationController?.popViewController(animated: true)
+            }
+                      alert.addAction(cancel)
+                      present(alert,animated: true)
             try? CollectionPersistence.manager.editData(Int: indexPath.row, newElement: selected)
-        }}
+        }
+      
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 200, height: 200)
     }
