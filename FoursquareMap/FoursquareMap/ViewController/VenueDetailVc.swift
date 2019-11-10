@@ -9,24 +9,54 @@
 import UIKit
 
 class VenueDetailVc: UIViewController {
-    
+    // MARK: - Variables
     var venue: Location?
+    @IBOutlet weak var venueName: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
     }
     private func setUpView(){
-        venueImage.image = UIImage(named: "noImage")
-        venueName.text = venue?.name
+        guard let venueInfo = venue else {
+            venueName.text = "No venue name"
+            locationLabel.text = "No location info"
+            return}
+        
+        guard let safeImage = venueInfo.image else {
+            venueImage.image = UIImage(named: "noImage")
+            return
+        }
+        getImage(Url: safeImage.imageInfo)
+        venueName.text = venueInfo.name
+        locationLabel.text = "Address: \(venueInfo.addres)"
     }
     
     
+    private func getImage (Url: String){
+        ImageManager.manager.getImage(urlStr: Url) { (Result) in
+            DispatchQueue.main.async {
+                switch Result{
+                case .failure(let error):
+                    print(error)
+                case .success(let image):
+                    self.venueImage.image = image
+                }
+            }
+            
+        }
+    }
+    @IBAction func locationAction(_ sender: UIButton) {
+    }
+    
     @IBOutlet weak var venueImage: UIImageView!
-    @IBOutlet weak var venueName: UILabel!
+    
     @IBAction func addButton(_ sender: UIButton) {
         let addVc = storyboard?.instantiateViewController(identifier: "addVenueVc")as! AddVenueToCollectionVC
-            addVc.venue = venue
-               self.navigationController?.pushViewController(addVc, animated: true)
+        addVc.venue = venue
+        self.navigationController?.pushViewController(addVc, animated: true)
     }
 }
