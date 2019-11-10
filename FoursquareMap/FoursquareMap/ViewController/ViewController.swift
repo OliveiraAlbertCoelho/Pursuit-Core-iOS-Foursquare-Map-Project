@@ -13,10 +13,8 @@ import UIKit
 
 class ViewController: UIViewController {
     private let locationManager = CLLocationManager()
-    var newAnnotation = MKPointAnnotation()
     var currentLatLng = ""
     var annotations = [MKAnnotation]()
-    let searchRadius: CLLocationDistance = 400
     @IBOutlet weak var venueSearchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var citySearchBar: UISearchBar!
@@ -49,7 +47,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setUpDelegate()
         locationAuthorization()
-        mapView.userTrackingMode = .follow
+        tagSearchBar()
     }
     
     private func loadData(search: String,latLng: String) {
@@ -64,6 +62,10 @@ class ViewController: UIViewController {
             }
         }
     }
+    private func tagSearchBar(){
+        venueSearchBar.tag = 0
+        citySearchBar.tag = 1
+    }
     private func setUpDelegate(){
         mapView.delegate = self
         locationManager.delegate = self
@@ -76,6 +78,7 @@ class ViewController: UIViewController {
         let status = CLLocationManager.authorizationStatus()
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
+            mapView.userTrackingMode = .follow
             mapView.showsUserLocation = true
             locationManager.requestLocation()
             locationManager.startUpdatingLocation()
@@ -106,11 +109,7 @@ extension ViewController: CLLocationManagerDelegate{
     
 }
 extension ViewController: UISearchBarDelegate{
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        venueSearchBar.showsCancelButton = false
-        venueSearchBar.resignFirstResponder()
-    }
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = citySearchBar.text
@@ -128,8 +127,9 @@ extension ViewController: UISearchBarDelegate{
             }
         }
         searchBar.resignFirstResponder()
+        disablesAutomaticKeyboardDismissal
     }
-    
+
 }
 extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
