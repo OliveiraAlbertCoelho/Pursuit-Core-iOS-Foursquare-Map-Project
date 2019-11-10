@@ -10,11 +10,8 @@ import UIKit
 
 class ResultListVC: UIViewController {
     // MARK: - Variables
-    var venues: [Location]?{
-        didSet{
-            self.venues![0].name
-        }
-    }
+    var venues: [Location]?
+    
     @IBOutlet weak var resultTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
