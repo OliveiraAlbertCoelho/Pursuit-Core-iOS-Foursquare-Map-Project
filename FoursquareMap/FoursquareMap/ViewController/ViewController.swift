@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     private let locationManager = CLLocationManager()
     var currentLatLng = ""
     var annotations = [MKAnnotation]()
+    var select: Location?
     @IBOutlet weak var venueSearchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var citySearchBar: UISearchBar!
@@ -24,16 +25,21 @@ class ViewController: UIViewController {
         didSet{
             imageCollection.reloadData()
             locations.forEach { (location) in
-            let annotation = MKPointAnnotation()
-            annotation.title = location.name
-            annotation.coordinate = location.coordinate
-            annotations.append(annotation)
-            mapView.addAnnotation(annotation)
+                let annotation = MKPointAnnotation()
+                annotation.title = location.name
+                annotation.coordinate = location.coordinate
+                annotations.append(annotation)
+                mapView.addAnnotation(annotation)
             }
             self.mapView.showAnnotations(self.annotations, animated: true)
         }
     }
     //MARK: - Buttons And ViewDidLoad
+    @objc func passData(sender: UIButton){
+                     let detailVC = storyboard?.instantiateViewController(identifier: "detailVc")as! VenueDetailVc
+                     detailVC.venue = select
+                     self.navigationController?.pushViewController(detailVC, animated: true)
+           }
     
     @IBAction func ResultVcAction(_ sender: UIButton) {
         if annotations.isEmpty{
@@ -47,11 +53,12 @@ class ViewController: UIViewController {
             self.navigationController?.pushViewController(resultVC, animated: true)
         }
     }
+    
     override func viewDidLoad() {
-         super.viewDidLoad()
-         setUpDelegate()
-         locationAuthorization()
-     }
+        super.viewDidLoad()
+        setUpDelegate()
+        locationAuthorization()
+    }
     // MARK: - Regular Functions
     private func loadData(search: String,latLng: String) {
         DispatchQueue.main.async {
@@ -108,7 +115,7 @@ extension ViewController: CLLocationManagerDelegate{
 }
 //MARK: UISearchBarDelegate functions
 extension ViewController: UISearchBarDelegate{
-
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = citySearchBar.text
@@ -127,17 +134,20 @@ extension ViewController: UISearchBarDelegate{
         }
         searchBar.resignFirstResponder()
     }
-
+    
 }
 //MARK: MKMapViewDelegate Functions
 extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
-        let  selected = locations.filter({$0.name == view.annotation?.title})
-        let detailVC = storyboard?.instantiateViewController(identifier: "detailVc")as! VenueDetailVc
-        detailVC.venue = selected[0]
-        self.navigationController?.pushViewController(detailVC, animated: true)
+     let infoButton = UIButton(type: .detailDisclosure)
+          view.rightCalloutAccessoryView = infoButton
+            infoButton.addTarget(self, action: #selector(passData(sender:)), for: .touchUpInside)
+            let  selected = self.locations.filter({$0.name == view.annotation?.title})
+        select = selected.first
+        }
+        
     }
-}
+
 //MARK: UICollectionViewDelegate Functions
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
