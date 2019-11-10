@@ -9,20 +9,22 @@
 import UIKit
 
 class AddVenueToCollectionVC: UIViewController {
+    //Mark: - Variables
+       @IBOutlet weak var venueCollection: UICollectionView!
     var collections: [CollectionModel]?{
         didSet{
             venueCollection.reloadData()
             
         }
     }
-    @IBOutlet weak var venueCollection: UICollectionView!
+    
     var venue: Location?
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
         loadData()
     }
-    
+   //MARK: - View Functions
     private func setUpView(){
         venueCollection.delegate = self
         venueCollection.dataSource = self
@@ -37,7 +39,7 @@ class AddVenueToCollectionVC: UIViewController {
         }
     }
 }
-
+ //MARK: - CollectionView Extensions
 extension AddVenueToCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let collect = collections{
