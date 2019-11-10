@@ -40,8 +40,7 @@ extension ResultListVC: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          let detailVc = storyboard?.instantiateViewController(identifier: "detailVc")as! VenueDetailVc
-        detailVc.venue = venues![indexPath.row]
-self.navigationController?.pushViewController(detailVc, animated: true)
+         detailVc.venue = venues![indexPath.row]
+         self.navigationController?.pushViewController(detailVc, animated: true)
     }
-    
 }

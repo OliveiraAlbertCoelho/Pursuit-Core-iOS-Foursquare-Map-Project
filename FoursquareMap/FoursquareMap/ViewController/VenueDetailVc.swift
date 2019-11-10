@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import Foundation
 
 class VenueDetailVc: UIViewController {
     // MARK: - Variables
-    var venue: Location?
-    @IBOutlet weak var venueName: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
+    var venue: Location?{
+        didSet{
+            getImage (Id:venue!.id)
+        }
+    }
+    @IBOutlet weak var locationName: UILabel!
     
+    @IBOutlet weak var venueImage: UIImageView!
+    @IBOutlet weak var venueAddress: UILabel!
     
     
     override func viewDidLoad() {
@@ -21,38 +27,41 @@ class VenueDetailVc: UIViewController {
         setUpView()
     }
     private func setUpView(){
-        guard let venueInfo = venue else {
-            venueName.text = "No venue name"
-            locationLabel.text = "No location info"
-            return}
-        
-        guard let safeImage = venueInfo.image else {
-            venueImage.image = UIImage(named: "noImage")
+        guard let location = venue else {
+            locationName.text = "No venue info"
             return
         }
-        getImage(Url: safeImage.imageInfo)
-        venueName.text = venueInfo.name
-        locationLabel.text = "Address: \(venueInfo.addres)"
+        locationName.text = location.name
+        venueAddress.text = location.address
     }
-    
-    
-    private func getImage (Url: String){
-        ImageManager.manager.getImage(urlStr: Url) { (Result) in
+    // MARK: - Regular View Functions
+    private func getImage (Id: String){
+    ImageAPI.manager.getImages(ID: Id ){ (result) in
             DispatchQueue.main.async {
-                switch Result{
+                switch result{
                 case .failure(let error):
                     print(error)
+                        self.venueImage.image = UIImage(named: "noImage")
                 case .success(let image):
-                    self.venueImage.image = image
+                    ImageManager.manager.getImage(urlStr: image.first?.imageInfo ?? "") { (result) in
+                        DispatchQueue.main.async {
+                            switch result{
+                            case .failure(let error):
+                                print(error)
+                                self.venueImage.image = UIImage(named: "noImage")
+                            case .success(let image):
+                              self.venueImage.image = image
+                            }
+                        }
+                    }
                 }
             }
-            
         }
     }
+    // MARK: - Button Actions
     @IBAction func locationAction(_ sender: UIButton) {
     }
     
-    @IBOutlet weak var venueImage: UIImageView!
     
     @IBAction func addButton(_ sender: UIButton) {
         let addVc = storyboard?.instantiateViewController(identifier: "addVenueVc")as! AddVenueToCollectionVC
