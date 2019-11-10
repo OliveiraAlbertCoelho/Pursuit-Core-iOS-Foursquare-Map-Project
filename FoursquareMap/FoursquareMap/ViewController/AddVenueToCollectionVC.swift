@@ -58,6 +58,7 @@ extension AddVenueToCollectionVC: UICollectionViewDelegate, UICollectionViewData
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         var selected = collections![indexPath.row]
         if var venueUnwrap = selected.venues{
             venueUnwrap.append(venue!)

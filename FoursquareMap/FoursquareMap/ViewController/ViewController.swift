@@ -16,6 +16,11 @@ class ViewController: UIViewController {
     var newAnnotation = MKPointAnnotation()
     var currentLatLng = ""
     var annotations = [MKAnnotation]()
+    let searchRadius: CLLocationDistance = 400
+    @IBOutlet weak var venueSearchBar: UISearchBar!
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var citySearchBar: UISearchBar!
+    @IBOutlet weak var imageCollection: UICollectionView!
     var locations = [Location](){
         didSet{
             imageCollection.reloadData()
@@ -28,22 +33,18 @@ class ViewController: UIViewController {
             }
             self.mapView.showAnnotations(self.annotations, animated: true)
         }
-        
     }
     @IBAction func ResultVcAction(_ sender: UIButton) {
-        let resultVC = storyboard?.instantiateViewController(identifier: "result")as! ResultListVC
-        resultVC.venues = locations
-        self.navigationController?.pushViewController(resultVC, animated: true)
-    }
-    
-    
-    
-    let searchRadius: CLLocationDistance = 400
-    @IBOutlet weak var venueSearchBar: UISearchBar!
-    @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var citySearchBar: UISearchBar!
-    @IBOutlet weak var imageCollection: UICollectionView!
-    
+        if annotations.isEmpty{
+            let alert = UIAlertController(title: "", message: "Please search for a valid venue", preferredStyle: .alert)
+            let cancel = UIAlertAction.init(title: "Ok", style: .cancel, handler: nil)
+            alert.addAction(cancel)
+            present(alert, animated: true)
+        }else {
+            let resultVC = storyboard?.instantiateViewController(identifier: "result")as! ResultListVC
+            resultVC.venues = locations
+            self.navigationController?.pushViewController(resultVC, animated: true)
+        }}
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpDelegate()
@@ -132,11 +133,10 @@ extension ViewController: UISearchBarDelegate{
 }
 extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
-    
-                let  selected = locations.filter({$0.name == view.annotation?.title})
-                let detailVC = storyboard?.instantiateViewController(identifier: "detailVc")as! VenueDetailVc
-                detailVC.venue = selected[0]
-                self.navigationController?.pushViewController(detailVC, animated: true)
+        let  selected = locations.filter({$0.name == view.annotation?.title})
+        let detailVC = storyboard?.instantiateViewController(identifier: "detailVc")as! VenueDetailVc
+        detailVC.venue = selected[0]
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -154,8 +154,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                     print(error)
                     cell.venueImage.image = UIImage(named: "noImage")
                 case .success(let image):
-                    
-                    
                     ImageManager.manager.getImage(urlStr: image.first?.imageInfo ?? "") { (result) in
                         DispatchQueue.main.async {
                             switch result{
@@ -180,9 +178,4 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         mapView.showAnnotations([annotation], animated: true)
         mapView.selectAnnotation(annotation, animated: true)
     }
-    
 }
-
-//                self.newAnnotation.coordinate = CLLocationCoordinate2D(latitude: lat!, longitude: lng!)
-//                let coordinateRegion = MKCoordinateRegion.init(center: self.newAnnotation.coordinate, latitudinalMeters: self.searchRadius * 2.0, longitudinalMeters: self.searchRadius * 2.0)
-//                self.mapView.setRegion(coordinateRegion, animated: true)
