@@ -9,14 +9,13 @@
 import UIKit
 
 class ResultListVC: UIViewController {
+    // MARK: - Variables
     var venues: [Location]?{
         didSet{
-            print(self.venues![0].name)
+            self.venues![0].name
         }
     }
-    
     @IBOutlet weak var resultTable: UITableView!
-       
     override func viewDidLoad() {
         super.viewDidLoad()
         resultTable.delegate = self
@@ -24,6 +23,8 @@ class ResultListVC: UIViewController {
         resultTable.reloadData()
     }
 }
+
+// MARK: - UITableViewDelegate Extension
 extension ResultListVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return venues!.count

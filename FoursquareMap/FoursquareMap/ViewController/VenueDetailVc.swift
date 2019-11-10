@@ -6,9 +6,10 @@
 //  Copyright © 2019 albert coelho oliveira. All rights reserved.
 //
 
+import MapKit
 import UIKit
 import Foundation
-
+import CoreLocation
 class VenueDetailVc: UIViewController {
     // MARK: - Variables
     var venue: Location?{
@@ -17,11 +18,9 @@ class VenueDetailVc: UIViewController {
         }
     }
     @IBOutlet weak var locationName: UILabel!
-    
     @IBOutlet weak var venueImage: UIImageView!
     @IBOutlet weak var venueAddress: UILabel!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
@@ -32,16 +31,16 @@ class VenueDetailVc: UIViewController {
             return
         }
         locationName.text = location.name
-        venueAddress.text = location.address
+        venueAddress.text = "Address: \(location.address)"
     }
     // MARK: - Regular View Functions
     private func getImage (Id: String){
-    ImageAPI.manager.getImages(ID: Id ){ (result) in
+        ImageAPI.manager.getImages(ID: Id ){ (result) in
             DispatchQueue.main.async {
                 switch result{
                 case .failure(let error):
                     print(error)
-                        self.venueImage.image = UIImage(named: "noImage")
+                    self.venueImage.image = UIImage(named: "noImage")
                 case .success(let image):
                     ImageManager.manager.getImage(urlStr: image.first?.imageInfo ?? "") { (result) in
                         DispatchQueue.main.async {
@@ -50,7 +49,7 @@ class VenueDetailVc: UIViewController {
                                 print(error)
                                 self.venueImage.image = UIImage(named: "noImage")
                             case .success(let image):
-                              self.venueImage.image = image
+                                self.venueImage.image = image
                             }
                         }
                     }
@@ -60,6 +59,14 @@ class VenueDetailVc: UIViewController {
     }
     // MARK: - Button Actions
     @IBAction func locationAction(_ sender: UIButton) {
+        guard let location = venue else {
+            sender.isHidden = false
+            return}
+        let coordinate =
+            CLLocationCoordinate2DMake((location.coordinate.latitude),(location.coordinate.longitude))
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+        mapItem.name = location.name
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
     }
     
     

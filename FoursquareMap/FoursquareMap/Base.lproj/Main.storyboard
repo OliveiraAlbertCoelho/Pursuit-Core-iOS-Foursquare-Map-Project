@@ -417,23 +417,23 @@
                                     <action selector="locationAction:" destination="yaF-JJ-nEb" eventType="touchUpInside" id="sKA-mz-PwK"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXm-uD-fed">
-                                <rect key="frame" x="0.0" y="443" width="414" height="65"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXm-uD-fed">
+                                <rect key="frame" x="7" y="443" width="400" height="65"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="B5a-Ti-cx8"/>
-                                    <constraint firstAttribute="width" constant="414" id="ZeG-Ge-SU5"/>
+                                    <constraint firstAttribute="width" constant="400" id="IlZ-EY-0GJ"/>
+                                    <constraint firstAttribute="height" constant="65" id="U7M-6J-MNb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6o8-KG-EHZ">
-                                <rect key="frame" x="0.0" y="551" width="414" height="76"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6o8-KG-EHZ">
+                                <rect key="frame" x="7" y="551" width="400" height="76"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="76" id="0Wy-yr-vLl"/>
-                                    <constraint firstAttribute="width" constant="414" id="MKK-5c-gAr"/>
+                                    <constraint firstAttribute="height" constant="76" id="G4p-zr-ESK"/>
+                                    <constraint firstAttribute="width" constant="400" id="X5N-FF-Stn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -444,13 +444,13 @@
                         <constraints>
                             <constraint firstItem="KXm-uD-fed" firstAttribute="centerY" secondItem="YFO-EW-1UV" secondAttribute="centerY" multiplier="1.05" id="6iO-US-3Nz"/>
                             <constraint firstItem="0w9-IN-lc4" firstAttribute="height" secondItem="6nQ-Uy-v9s" secondAttribute="height" id="6w6-hl-Ywd"/>
-                            <constraint firstItem="6o8-KG-EHZ" firstAttribute="centerX" secondItem="YFO-EW-1UV" secondAttribute="centerX" id="HJl-dv-TAg"/>
-                            <constraint firstItem="KXm-uD-fed" firstAttribute="centerX" secondItem="YFO-EW-1UV" secondAttribute="centerX" id="Rmn-Fc-0Gx"/>
+                            <constraint firstItem="KXm-uD-fed" firstAttribute="centerX" secondItem="YFO-EW-1UV" secondAttribute="centerX" id="LdZ-GI-YrX"/>
                             <constraint firstItem="0w9-IN-lc4" firstAttribute="width" secondItem="6nQ-Uy-v9s" secondAttribute="width" id="Vek-OW-Csa"/>
                             <constraint firstItem="6nQ-Uy-v9s" firstAttribute="centerY" secondItem="YFO-EW-1UV" secondAttribute="centerY" multiplier="1.6" id="d03-02-FYS"/>
                             <constraint firstItem="6nQ-Uy-v9s" firstAttribute="centerX" secondItem="YFO-EW-1UV" secondAttribute="centerX" multiplier="0.5" id="eN6-PN-4Xw"/>
                             <constraint firstItem="PhH-it-8za" firstAttribute="centerY" secondItem="YFO-EW-1UV" secondAttribute="centerY" multiplier="0.55" id="fo6-Zh-U4I"/>
                             <constraint firstItem="6o8-KG-EHZ" firstAttribute="centerY" secondItem="YFO-EW-1UV" secondAttribute="centerY" multiplier="1.3" id="gOC-yL-bRK"/>
+                            <constraint firstItem="6o8-KG-EHZ" firstAttribute="centerX" secondItem="YFO-EW-1UV" secondAttribute="centerX" id="oaR-7b-cpg"/>
                             <constraint firstItem="0w9-IN-lc4" firstAttribute="centerX" secondItem="YFO-EW-1UV" secondAttribute="centerX" multiplier="1.5" id="rJK-SF-IWC"/>
                             <constraint firstItem="0w9-IN-lc4" firstAttribute="centerY" secondItem="YFO-EW-1UV" secondAttribute="centerY" multiplier="1.6" id="uo4-jF-yRC"/>
                             <constraint firstItem="PhH-it-8za" firstAttribute="centerX" secondItem="YFO-EW-1UV" secondAttribute="centerX" id="ux5-So-xP6"/>
