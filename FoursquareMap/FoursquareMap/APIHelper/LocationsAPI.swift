@@ -29,7 +29,7 @@ class LocationsAPI {
                 case .success(let data):
                     do {
                     let local = try JSONDecoder().decode(LocationsWrapper.self, from: data)
-                        completionHandler(.success(local.response.venues ))
+                        completionHandler(.success(local.response.venues! ))
                     } catch {
                         print(error)
                         completionHandler(.failure(.other(rawError: error)))

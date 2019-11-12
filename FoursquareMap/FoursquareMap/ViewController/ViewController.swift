@@ -133,8 +133,9 @@ extension ViewController: UISearchBarDelegate{
             }
         }
         searchBar.resignFirstResponder()
+        
     }
-    
+
 }
 //MARK: MKMapViewDelegate Functions
 extension ViewController: MKMapViewDelegate {
@@ -163,7 +164,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = imageCollection.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCell
         let data = locations[indexPath.row]
-        ImageAPI.manager.getImages(ID: data.id ){ (result) in
+        ImageAPI.manager.getImages(ID: data.id! ){ (result) in
             DispatchQueue.main.async {
                 switch result{
                 case .failure(let error):
@@ -187,8 +188,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return cell
         
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 100)
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let imgWidth = view.bounds.width/2.8
+        let imgHeight = imgWidth
+        return CGSize(width: imgWidth, height: imgHeight)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let annotation = annotations[indexPath.row]

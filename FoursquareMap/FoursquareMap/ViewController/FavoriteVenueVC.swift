@@ -41,9 +41,13 @@ class FavoriteVenueVC: UIViewController {
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             guard let venue = venues else {
                 let alert = UIAlertController(title: "", message: "You have no saved venues in this collection", preferredStyle: .alert)
-                let cancel = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                let cancel = UIAlertAction(title: "Ok", style: .cancel) { (alert) in
+                    self.navigationController?.popViewController(animated: true)
+                }
                 alert.addAction(cancel)
+                
                 present(alert, animated: true)
+               
                 return 0
             }
             

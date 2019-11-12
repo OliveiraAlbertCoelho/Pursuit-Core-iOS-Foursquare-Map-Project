@@ -14,7 +14,6 @@ class AddVenueToCollectionVC: UIViewController {
     var collections: [CollectionModel]?{
         didSet{
             venueCollection.reloadData()
-            
         }
     }
     
@@ -53,7 +52,6 @@ extension AddVenueToCollectionVC: UICollectionViewDelegate, UICollectionViewData
         if let data = collections{
             let cellData = data[indexPath.row]
             cell.collectionName.text = cellData.name
-            cell.backgroundColor = .blue
             return cell
         }else {
             return UICollectionViewCell()
@@ -62,7 +60,7 @@ extension AddVenueToCollectionVC: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         var selected = collections![indexPath.row]
-        if selected.checkVenues(Id: venue!.id){
+        if selected.checkVenues(Id: venue!.id!){
             let alert = UIAlertController(title: "", message: "You already have this venue saved", preferredStyle: .alert)
             let cancel = UIAlertAction(title: "OK", style: .cancel){ (action) in
                 self.navigationController?.popViewController(animated: true)

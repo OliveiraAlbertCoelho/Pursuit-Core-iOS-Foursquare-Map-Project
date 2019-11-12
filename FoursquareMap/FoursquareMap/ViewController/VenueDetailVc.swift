@@ -14,7 +14,7 @@ class VenueDetailVc: UIViewController {
     // MARK: - Variables
     var venue: Location?{
         didSet{
-            getImage (Id:venue!.id)
+            getImage(Id: (venue?.id)!)
         }
     }
     @IBOutlet weak var locationName: UILabel!
@@ -33,7 +33,7 @@ class VenueDetailVc: UIViewController {
         locationName.text = location.name
         venueAddress.text = "Address: \(location.address)"
     }
-    // MARK: - Regular View Functions
+//     MARK: - Regular View Functions
     private func getImage (Id: String){
         ImageAPI.manager.getImages(ID: Id ){ (result) in
             DispatchQueue.main.async {
@@ -57,6 +57,9 @@ class VenueDetailVc: UIViewController {
             }
         }
     }
+
+        
+
     // MARK: - Button Actions
     @IBAction func locationAction(_ sender: UIButton) {
         guard let location = venue else {

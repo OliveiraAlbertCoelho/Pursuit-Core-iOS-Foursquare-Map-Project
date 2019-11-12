@@ -189,9 +189,9 @@
 		50F022692370DDF500C1C4D3 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				50363EF62374B51600F1D226 /* VenueDetailVc.swift */,
 				50F022482370B31A00C1C4D3 /* ViewController.swift */,
 				505A44B32372305400A75CCD /* ResultListVC.swift */,
-				50363EF62374B51600F1D226 /* VenueDetailVc.swift */,
 				50363EF82374BEAA00F1D226 /* CollectionsViewController.swift */,
 				507B29B823777BA900C4D8D2 /* FavoriteVenueVC.swift */,
 				50363EFE2374C57F00F1D226 /* AddCollectionVC.swift */,

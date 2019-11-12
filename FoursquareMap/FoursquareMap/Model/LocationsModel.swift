@@ -15,24 +15,29 @@ struct LocationsWrapper: Codable {
     let response: Venues
 }
 struct Venues: Codable{
-    let venues: [Location]
-    
-    
+    let venues: [Location]?
 }
 class Location: NSObject, Codable, MKAnnotation{
-    let id: String
-    let name: String
-    let location: Coords
+    let id: String?
+    let name: String?
+    let location: Coords?
     var address: String{
-        return location.address
-    }
+        if let location = location?.address{
+            return location
+        }else {
+        return ""
+        }}
     var coordinate: CLLocationCoordinate2D{
-        return CLLocationCoordinate2D(latitude: location.lat, longitude: location.lng)
+        if let lat = location?.lat {
+            if let lng = location?.lng{
+                 return CLLocationCoordinate2D(latitude: lat, longitude: lng)
+            }
+        }
+        return CLLocationCoordinate2D()
      }
-  
 }
 struct Coords: Codable {
     let lat: Double
     let lng: Double
-    let address: String
+    let address: String?
 }
