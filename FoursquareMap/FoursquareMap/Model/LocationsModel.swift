@@ -35,9 +35,33 @@ class Location: NSObject, Codable, MKAnnotation{
         }
         return CLLocationCoordinate2D()
      }
+    static func getVenues(from jsonData: Data) -> Venues? {
+           do {
+               let data = try JSONDecoder().decode(Venues.self, from: jsonData)
+               return data
+           } catch {
+               print("Decoding error: \(error)")
+               return nil
+           }
+       }
 }
 struct Coords: Codable {
     let lat: Double
     let lng: Double
     let address: String?
+}
+struct DataToTest{
+static func getDataFromBundle(withName name: String, andType type: String) -> Data {
+    guard let pathToData = Bundle.main.path(forResource: name, ofType: type) else {
+        fatalError("\(name).\(type) file not found")
+    }
+    let internalUrl = URL(fileURLWithPath: pathToData)
+    do {
+        let data = try Data(contentsOf: internalUrl)
+        return data
+    }
+    catch {
+        fatalError("An error occurred: \(error)}")
+    }
+}
 }

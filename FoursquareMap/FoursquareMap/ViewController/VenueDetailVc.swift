@@ -65,8 +65,7 @@ class VenueDetailVc: UIViewController {
         guard let location = venue else {
             sender.isHidden = false
             return}
-        let coordinate =
-            CLLocationCoordinate2DMake((location.coordinate.latitude),(location.coordinate.longitude))
+        let coordinate = location.coordinate
         let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
         mapItem.name = location.name
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])

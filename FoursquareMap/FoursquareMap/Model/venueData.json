@@ -1,0 +1,1913 @@
+
+{
+    "meta": {
+        "code": 200,
+        "requestId": "5dcf12ed47e0d60022a9220c"
+    },
+    "response": {
+        "venues": [
+            {
+                "id": "5b1080d4178a2a002c58e21a",
+                "name": "Daisy’s Pizza III",
+                "location": {
+                    "address": "28-17 36th Av",
+                    "crossStreet": "29th St",
+                    "lat": 40.757523,
+                    "lng": -73.931529,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.757523,
+                            "lng": -73.931529
+                        }
+                    ],
+                    "distance": 88,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "28-17 36th Av (29th St)",
+                        "New York, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "delivery": {
+                    "id": "462527",
+                    "url": "https://www.seamless.com/menu/daisys-pizza-place-2817-36th-ave-astoria/462527?affiliate=1131&utm_source=foursquare-affiliate-network&utm_medium=affiliate&utm_campaign=1131&utm_content=462527",
+                    "provider": {
+                        "name": "seamless",
+                        "icon": {
+                            "prefix": "https://fastly.4sqi.net/img/general/cap/",
+                            "sizes": [
+                                40,
+                                50
+                            ],
+                            "name": "/delivery_provider_seamless_20180129.png"
+                        }
+                    }
+                },
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4a86124ff964a5204e0020e3",
+                "name": "Napoli Pizza & Pasta",
+                "location": {
+                    "address": "3302 35th Ave",
+                    "lat": 40.757301443039324,
+                    "lng": -73.92685445324773,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.757301443039324,
+                            "lng": -73.92685445324773
+                        }
+                    ],
+                    "distance": 412,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "3302 35th Ave",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d110941735",
+                        "name": "Italian Restaurant",
+                        "pluralName": "Italian Restaurants",
+                        "shortName": "Italian",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/italian_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "delivery": {
+                    "id": "25104",
+                    "url": "https://www.seamless.com/menu/napoli-pizza--pasta-3302-35th-ave-astoria/25104?affiliate=1131&utm_source=foursquare-affiliate-network&utm_medium=affiliate&utm_campaign=1131&utm_content=25104",
+                    "provider": {
+                        "name": "seamless",
+                        "icon": {
+                            "prefix": "https://fastly.4sqi.net/img/general/cap/",
+                            "sizes": [
+                                40,
+                                50
+                            ],
+                            "name": "/delivery_provider_seamless_20180129.png"
+                        }
+                    }
+                },
+                "venuePage": {
+                    "id": "138525171"
+                },
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4b679046f964a5206a552be3",
+                "name": "Dino's Pizza & Pasta",
+                "location": {
+                    "address": "30-01 Broadway",
+                    "crossStreet": "at 30th St.",
+                    "lat": 40.762398,
+                    "lng": -73.925989,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.762398,
+                            "lng": -73.925989
+                        }
+                    ],
+                    "distance": 653,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "30-01 Broadway (at 30th St.)",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "delivery": {
+                    "id": "71371",
+                    "url": "https://www.seamless.com/menu/dinos-pizza--pasta-3001-broadway-ave-astoria/71371?affiliate=1131&utm_source=foursquare-affiliate-network&utm_medium=affiliate&utm_campaign=1131&utm_content=71371",
+                    "provider": {
+                        "name": "seamless",
+                        "icon": {
+                            "prefix": "https://fastly.4sqi.net/img/general/cap/",
+                            "sizes": [
+                                40,
+                                50
+                            ],
+                            "name": "/delivery_provider_seamless_20180129.png"
+                        }
+                    }
+                },
+                "venuePage": {
+                    "id": "520433516"
+                },
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4b19911af964a520a0df23e3",
+                "name": "Polito's Pizza",
+                "location": {
+                    "address": "3812 Broadway",
+                    "crossStreet": "btwn Steinway & 38th St",
+                    "lat": 40.75912136506576,
+                    "lng": -73.91937809704392,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.75912136506576,
+                            "lng": -73.91937809704392
+                        }
+                    ],
+                    "distance": 1031,
+                    "postalCode": "11103",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "3812 Broadway (btwn Steinway & 38th St)",
+                        "Astoria, NY 11103",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "venuePage": {
+                    "id": "80064055"
+                },
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4c13f48a77cea593bdcdcf60",
+                "name": "Lucky Pizza",
+                "location": {
+                    "address": "2714 Queens Plz S",
+                    "crossStreet": "btwn 27th & 28th St",
+                    "lat": 40.75017327776553,
+                    "lng": -73.93949009522633,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.75017327776553,
+                            "lng": -73.93949009522633
+                        }
+                    ],
+                    "distance": 1126,
+                    "postalCode": "11101",
+                    "cc": "US",
+                    "city": "Long Island City",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "2714 Queens Plz S (btwn 27th & 28th St)",
+                        "Long Island City, NY 11101",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "delivery": {
+                    "id": "111703",
+                    "url": "https://www.seamless.com/menu/lucky-pizza-27-14-queens-plz-s-long-island-city/111703?affiliate=1131&utm_source=foursquare-affiliate-network&utm_medium=affiliate&utm_campaign=1131&utm_content=111703",
+                    "provider": {
+                        "name": "seamless",
+                        "icon": {
+                            "prefix": "https://fastly.4sqi.net/img/general/cap/",
+                            "sizes": [
+                                40,
+                                50
+                            ],
+                            "name": "/delivery_provider_seamless_20180129.png"
+                        }
+                    }
+                },
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4b23de5af964a520a45b24e3",
+                "name": "Romano's Famous Pizza and Gyro",
+                "location": {
+                    "address": "3221 Broadway",
+                    "lat": 40.76138775446315,
+                    "lng": -73.92369530455599,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.76138775446315,
+                            "lng": -73.92369530455599
+                        }
+                    ],
+                    "distance": 746,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "3221 Broadway",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d10e941735",
+                        "name": "Greek Restaurant",
+                        "pluralName": "Greek Restaurants",
+                        "shortName": "Greek",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/greek_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "delivery": {
+                    "id": "26160",
+                    "url": "https://www.seamless.com/menu/romanos-famous-pizza--gyro-3221-broadway-ave-long-island-city/26160?affiliate=1131&utm_source=foursquare-affiliate-network&utm_medium=affiliate&utm_campaign=1131&utm_content=26160",
+                    "provider": {
+                        "name": "seamless",
+                        "icon": {
+                            "prefix": "https://fastly.4sqi.net/img/general/cap/",
+                            "sizes": [
+                                40,
+                                50
+                            ],
+                            "name": "/delivery_provider_seamless_20180129.png"
+                        }
+                    }
+                },
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4c6f2e0ed274b60c2efdd50d",
+                "name": "Astoria Park Pizza II",
+                "location": {
+                    "address": "3220 34th Ave",
+                    "crossStreet": "at 32nd St.",
+                    "lat": 40.75939728519915,
+                    "lng": -73.92594451248924,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.75939728519915,
+                            "lng": -73.92594451248924
+                        }
+                    ],
+                    "distance": 488,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "3220 34th Ave (at 32nd St.)",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d110941735",
+                        "name": "Italian Restaurant",
+                        "pluralName": "Italian Restaurants",
+                        "shortName": "Italian",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/italian_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4c0d8242d64c0f4775d8265d",
+                "name": "Samaria Pizza",
+                "location": {
+                    "address": "2107 Broadway",
+                    "lat": 40.76561154319845,
+                    "lng": -73.93084297776974,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.76561154319845,
+                            "lng": -73.93084297776974
+                        }
+                    ],
+                    "distance": 814,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "2107 Broadway",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "delivery": {
+                    "id": "300236",
+                    "url": "https://www.seamless.com/menu/samaria-pizza-2107-broadway-queens/300236?affiliate=1131&utm_source=foursquare-affiliate-network&utm_medium=affiliate&utm_campaign=1131&utm_content=300236",
+                    "provider": {
+                        "name": "seamless",
+                        "icon": {
+                            "prefix": "https://fastly.4sqi.net/img/general/cap/",
+                            "sizes": [
+                                40,
+                                50
+                            ],
+                            "name": "/delivery_provider_seamless_20180129.png"
+                        }
+                    }
+                },
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4b653005f964a52018e82ae3",
+                "name": "Boston Pizza",
+                "location": {
+                    "address": "3702 Broadway",
+                    "crossStreet": "37th St",
+                    "lat": 40.75967338263502,
+                    "lng": -73.92052513373515,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.75967338263502,
+                            "lng": -73.92052513373515
+                        }
+                    ],
+                    "distance": 942,
+                    "postalCode": "11103",
+                    "cc": "US",
+                    "city": "Long Island City",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "3702 Broadway (37th St)",
+                        "Long Island City, NY 11103",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "delivery": {
+                    "id": "322179",
+                    "url": "https://www.seamless.com/menu/boston-pizza-and-restaurant-3705-broadway-queens/322179?affiliate=1131&utm_source=foursquare-affiliate-network&utm_medium=affiliate&utm_campaign=1131&utm_content=322179",
+                    "provider": {
+                        "name": "seamless",
+                        "icon": {
+                            "prefix": "https://fastly.4sqi.net/img/general/cap/",
+                            "sizes": [
+                                40,
+                                50
+                            ],
+                            "name": "/delivery_provider_seamless_20180129.png"
+                        }
+                    }
+                },
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "57097116498e66a61ef54dda",
+                "name": "Papa John's Pizza",
+                "location": {
+                    "address": "35-48 31st St",
+                    "lat": 40.75704646404968,
+                    "lng": -73.92975155828378,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.75704646404968,
+                            "lng": -73.92975155828378
+                        }
+                    ],
+                    "distance": 208,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "35-48 31st St",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "delivery": {
+                    "id": "307241",
+                    "url": "https://www.seamless.com/menu/papa-johns-pizza-35-48-31st-st-astoria/307241?affiliate=1131&utm_source=foursquare-affiliate-network&utm_medium=affiliate&utm_campaign=1131&utm_content=307241",
+                    "provider": {
+                        "name": "seamless",
+                        "icon": {
+                            "prefix": "https://fastly.4sqi.net/img/general/cap/",
+                            "sizes": [
+                                40,
+                                50
+                            ],
+                            "name": "/delivery_provider_seamless_20180129.png"
+                        }
+                    }
+                },
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "5a861d306cf01a16a0478dba",
+                "name": "Champion Pizza",
+                "location": {
+                    "lat": 40.76173775484871,
+                    "lng": -73.92499075920153,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.76173775484871,
+                            "lng": -73.92499075920153
+                        }
+                    ],
+                    "distance": 672,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Queens",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "Queens, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "delivery": {
+                    "id": "725785",
+                    "url": "https://www.seamless.com/menu/champion-pizza-3112-broadway-astoria/725785?affiliate=1131&utm_source=foursquare-affiliate-network&utm_medium=affiliate&utm_campaign=1131&utm_content=725785",
+                    "provider": {
+                        "name": "seamless",
+                        "icon": {
+                            "prefix": "https://fastly.4sqi.net/img/general/cap/",
+                            "sizes": [
+                                40,
+                                50
+                            ],
+                            "name": "/delivery_provider_seamless_20180129.png"
+                        }
+                    }
+                },
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4bd3822ccaff95216921d5f0",
+                "name": "One Stop Pizza",
+                "location": {
+                    "address": "28-15 36th Ave",
+                    "lat": 40.75743329504099,
+                    "lng": -73.93159850295947,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.75743329504099,
+                            "lng": -73.93159850295947
+                        }
+                    ],
+                    "distance": 98,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "28-15 36th Ave",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "598ba71ff2905e16144cf3b9",
+                "name": "Rosa's Pizza",
+                "location": {
+                    "address": "31-01 21st St",
+                    "crossStreet": "31st Avenue",
+                    "lat": 40.767215687920775,
+                    "lng": -73.92995531490436,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.767215687920775,
+                            "lng": -73.92995531490436
+                        }
+                    ],
+                    "distance": 999,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "neighborhood": "Astoria",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "31-01 21st St (31st Avenue)",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "5cb62b5ff1fdaf002cc3c195",
+                "name": "Best Pizza Shop",
+                "location": {
+                    "address": "32-20 34th Ave",
+                    "crossStreet": "btwn 32nd & 33rd St",
+                    "lat": 40.759027,
+                    "lng": -73.925957,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.759027,
+                            "lng": -73.925957
+                        }
+                    ],
+                    "distance": 479,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "32-20 34th Ave (btwn 32nd & 33rd St)",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "delivery": {
+                    "id": "1155429",
+                    "url": "https://www.seamless.com/menu/best-pizza-shop-3220-34th-ave-astoria/1155429?affiliate=1131&utm_source=foursquare-affiliate-network&utm_medium=affiliate&utm_campaign=1131&utm_content=1155429",
+                    "provider": {
+                        "name": "seamless",
+                        "icon": {
+                            "prefix": "https://fastly.4sqi.net/img/general/cap/",
+                            "sizes": [
+                                40,
+                                50
+                            ],
+                            "name": "/delivery_provider_seamless_20180129.png"
+                        }
+                    }
+                },
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4b6dc8fdf964a5209f8f2ce3",
+                "name": "Pizza in the Cone",
+                "location": {
+                    "address": "32-15 36th Ave",
+                    "lat": 40.756095116666664,
+                    "lng": -73.928273,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.756095116666664,
+                            "lng": -73.928273
+                        }
+                    ],
+                    "distance": 371,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "32-15 36th Ave",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "5a3ea2420313200617014834",
+                "name": "Il Miglio Pizza & Italian Restaurant",
+                "location": {
+                    "address": "11-03 36th Ave",
+                    "crossStreet": "11th Street",
+                    "lat": 40.761086,
+                    "lng": -73.93964,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.761086,
+                            "lng": -73.93964
+                        }
+                    ],
+                    "distance": 747,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Long Island City",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "11-03 36th Ave (11th Street)",
+                        "Long Island City, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "delivery": {
+                    "id": "1400982",
+                    "url": "https://www.seamless.com/menu/il-miglio-brick-oven-pizzeria-and-italian-restaurant-1103-36th-ave-long-island-city/1400982?affiliate=1131&utm_source=foursquare-affiliate-network&utm_medium=affiliate&utm_campaign=1131&utm_content=1400982",
+                    "provider": {
+                        "name": "seamless",
+                        "icon": {
+                            "prefix": "https://fastly.4sqi.net/img/general/cap/",
+                            "sizes": [
+                                40,
+                                50
+                            ],
+                            "name": "/delivery_provider_seamless_20180129.png"
+                        }
+                    }
+                },
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "58afa5d661052868fb7339b4",
+                "name": "GoodFellas Pizza Inc.",
+                "location": {
+                    "address": "25-19 27th St",
+                    "lat": 40.753242,
+                    "lng": -73.937256,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.753242,
+                            "lng": -73.937256
+                        }
+                    ],
+                    "distance": 741,
+                    "postalCode": "11102",
+                    "cc": "US",
+                    "city": "Long Island City",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "25-19 27th St",
+                        "Long Island City, NY 11102",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "50e8a51ce4b097a7b829088e",
+                "name": "Falafelo's Pizza & Deli",
+                "location": {
+                    "address": "25-08 37th Ave",
+                    "crossStreet": "Crescent Street",
+                    "lat": 40.75671873268598,
+                    "lng": -73.93447521554097,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.75671873268598,
+                            "lng": -73.93447521554097
+                        }
+                    ],
+                    "distance": 303,
+                    "postalCode": "11101",
+                    "cc": "US",
+                    "city": "Long Island City",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "25-08 37th Ave (Crescent Street)",
+                        "Long Island City, NY 11101",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "592f302f0d173f705725bf7f",
+                "name": "Clemenzas Pizza",
+                "location": {
+                    "lat": 40.761585,
+                    "lng": -73.931088,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.761585,
+                            "lng": -73.931088
+                        }
+                    ],
+                    "distance": 366,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "New York, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4bebd433a9900f4799331840",
+                "name": "MTA Subway - Queens Plaza (E/M/R)",
+                "location": {
+                    "address": "Queens Plaza S",
+                    "crossStreet": "Northern Blvd.",
+                    "lat": 40.74922376959502,
+                    "lng": -73.9372179473053,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.74922376959502,
+                            "lng": -73.9372179473053
+                        }
+                    ],
+                    "distance": 1118,
+                    "postalCode": "11101",
+                    "cc": "US",
+                    "city": "Long Island City",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "Queens Plaza S (Northern Blvd.)",
+                        "Long Island City, NY 11101",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1fd931735",
+                        "name": "Metro Station",
+                        "pluralName": "Metro Stations",
+                        "shortName": "Metro",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/travel/subway_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "547a0c25498e29745dc25580",
+                "name": "Fat Cat's Pizza",
+                "location": {
+                    "address": "32-20 34th Ave",
+                    "lat": 40.759144786411596,
+                    "lng": -73.92591006743696,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.759144786411596,
+                            "lng": -73.92591006743696
+                        }
+                    ],
+                    "distance": 485,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Queens",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "32-20 34th Ave",
+                        "Queens, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "51298c58e4b016a0e01ef5f0",
+                "name": "Napoli Pizza & Pasta",
+                "location": {
+                    "address": "1001 36th Ave",
+                    "lat": 40.761349670197674,
+                    "lng": -73.94064051022869,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.761349670197674,
+                            "lng": -73.94064051022869
+                        }
+                    ],
+                    "distance": 836,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "1001 36th Ave",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "delivery": {
+                    "id": "348764",
+                    "url": "https://www.seamless.com/menu/roma-pizza--pasta-10-01-36th-ave-long-island-city/348764?affiliate=1131&utm_source=foursquare-affiliate-network&utm_medium=affiliate&utm_campaign=1131&utm_content=348764",
+                    "provider": {
+                        "name": "seamless",
+                        "icon": {
+                            "prefix": "https://fastly.4sqi.net/img/general/cap/",
+                            "sizes": [
+                                40,
+                                50
+                            ],
+                            "name": "/delivery_provider_seamless_20180129.png"
+                        }
+                    }
+                },
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4b15d130f964a520a4b423e3",
+                "name": "Steinway Pizza",
+                "location": {
+                    "address": "3151 Steinway St",
+                    "crossStreet": "btw Broadway & 31st Ave",
+                    "lat": 40.76128334964148,
+                    "lng": -73.92094840330479,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.76128334964148,
+                            "lng": -73.92094840330479
+                        }
+                    ],
+                    "distance": 953,
+                    "postalCode": "11103",
+                    "cc": "US",
+                    "city": "Long Island City",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "3151 Steinway St (btw Broadway & 31st Ave)",
+                        "Long Island City, NY 11103",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "delivery": {
+                    "id": "264296",
+                    "url": "https://www.seamless.com/menu/steinway-pizza-31-51-steinway-st-astoria/264296?affiliate=1131&utm_source=foursquare-affiliate-network&utm_medium=affiliate&utm_campaign=1131&utm_content=264296",
+                    "provider": {
+                        "name": "seamless",
+                        "icon": {
+                            "prefix": "https://fastly.4sqi.net/img/general/cap/",
+                            "sizes": [
+                                40,
+                                50
+                            ],
+                            "name": "/delivery_provider_seamless_20180129.png"
+                        }
+                    }
+                },
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4f947790e4b0532d5e85e172",
+                "name": "Mike's Pizza",
+                "location": {
+                    "address": "39-37 30th St",
+                    "crossStreet": "39th Ave & 40th Ave",
+                    "lat": 40.75224656731344,
+                    "lng": -73.9344749685542,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.75224656731344,
+                            "lng": -73.9344749685542
+                        }
+                    ],
+                    "distance": 718,
+                    "postalCode": "11101",
+                    "cc": "US",
+                    "city": "Long Island City",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "39-37 30th St (39th Ave & 40th Ave)",
+                        "Long Island City, NY 11101",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4f32351419836c91c7c0bdb0",
+                "name": "Atana Pizza",
+                "location": {
+                    "address": "2107 Broadway",
+                    "lat": 40.765005,
+                    "lng": -73.931248,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.765005,
+                            "lng": -73.931248
+                        }
+                    ],
+                    "distance": 745,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "2107 Broadway",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "54cac33d498e42f1c384fb01",
+                "name": "P.S. Pizza",
+                "location": {
+                    "address": "32-02 Broadway",
+                    "lat": 40.76158344322706,
+                    "lng": -73.9245831105619,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.76158344322706,
+                            "lng": -73.9245831105619
+                        }
+                    ],
+                    "distance": 691,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "32-02 Broadway",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "5c060e448a4cf5002cfb20d2",
+                "name": "Roma Pizza and Pasta",
+                "location": {
+                    "address": "10-01 36th Ave",
+                    "lat": 40.76120336394223,
+                    "lng": -73.94046664237976,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.76120336394223,
+                            "lng": -73.94046664237976
+                        }
+                    ],
+                    "distance": 816,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "10-01 36th Ave",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4e4decffbd4101d0d79e5be6",
+                "name": "Kennedy Fried Chicken & Pizza",
+                "location": {
+                    "address": "2502 Queens Plz S",
+                    "lat": 40.749543627373725,
+                    "lng": -73.93759233038934,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.749543627373725,
+                            "lng": -73.93759233038934
+                        }
+                    ],
+                    "distance": 1100,
+                    "postalCode": "11101",
+                    "cc": "US",
+                    "city": "Long Island City",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "2502 Queens Plz S",
+                        "Long Island City, NY 11101",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4d4ae6fc7a7b7dea34424761",
+                        "name": "Fried Chicken Joint",
+                        "pluralName": "Fried Chicken Joints",
+                        "shortName": "Fried Chicken",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/friedchicken_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "531ba648498ebda0f285f2d4",
+                "name": "Bartolino's Pizza",
+                "location": {
+                    "address": "3413 Broadway",
+                    "crossStreet": "34 street",
+                    "lat": 40.76062826106851,
+                    "lng": -73.92254590456571,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.76062826106851,
+                            "lng": -73.92254590456571
+                        }
+                    ],
+                    "distance": 802,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "3413 Broadway (34 street)",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "5748e82a498e43b1d6ee44f6",
+                "name": "Donatello Pizza",
+                "location": {
+                    "lat": 40.755347,
+                    "lng": -73.921819,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.755347,
+                            "lng": -73.921819
+                        }
+                    ],
+                    "distance": 885,
+                    "postalCode": "11101",
+                    "cc": "US",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "New York, NY 11101",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4e4ec5db628441666984e32c",
+                "name": "Friendly Pizza & Restaurant",
+                "location": {
+                    "address": "21-12 36th Ave",
+                    "crossStreet": "21st Street",
+                    "lat": 40.76721318439017,
+                    "lng": -73.93017546659998,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.76721318439017,
+                            "lng": -73.93017546659998
+                        }
+                    ],
+                    "distance": 997,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "21-12 36th Ave (21st Street)",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4c4f33b824edc9b633ab4ebb",
+                "name": "Copacabana Brazilian Restaurant",
+                "location": {
+                    "address": "3116 36th Ave",
+                    "crossStreet": "btwn 31st & 32nd St.",
+                    "lat": 40.7562700650146,
+                    "lng": -73.92910670061477,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.7562700650146,
+                            "lng": -73.92910670061477
+                        }
+                    ],
+                    "distance": 307,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "3116 36th Ave (btwn 31st & 32nd St.)",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d16b941735",
+                        "name": "Brazilian Restaurant",
+                        "pluralName": "Brazilian Restaurants",
+                        "shortName": "Brazilian",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/argentinian_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4f32400619836c91c7c503fc",
+                "name": "New Village Pizza and Coffee",
+                "location": {
+                    "address": "805 36th Ave",
+                    "lat": 40.761977,
+                    "lng": -73.942118,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.761977,
+                            "lng": -73.942118
+                        }
+                    ],
+                    "distance": 978,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "805 36th Ave",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4d4b7105d754a06374d81259",
+                        "name": "Food",
+                        "pluralName": "Food",
+                        "shortName": "Food",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/default_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4f32244b19836c91c7ba3ea2",
+                "name": "Combo Pizza Deli and Italian Restaurant",
+                "location": {
+                    "address": "3241 Steinway St",
+                    "lat": 40.75798,
+                    "lng": -73.91978,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.75798,
+                            "lng": -73.91978
+                        }
+                    ],
+                    "distance": 994,
+                    "postalCode": "11103",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "3241 Steinway St",
+                        "Astoria, NY 11103",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4e10d0becc3fd301827663ea",
+                "name": "Cantina's Pizza",
+                "location": {
+                    "address": "37-07 Broadway",
+                    "crossStreet": "between 37th and 38th St.",
+                    "lat": 40.75966745263551,
+                    "lng": -73.92017841339111,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.75966745263551,
+                            "lng": -73.92017841339111
+                        }
+                    ],
+                    "distance": 971,
+                    "postalCode": "11103",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "37-07 Broadway (between 37th and 38th St.)",
+                        "Astoria, NY 11103",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4f32643f19836c91c7d34073",
+                "name": "La Bella Chicken and Pizza",
+                "location": {
+                    "address": "2515 Queens Plz N",
+                    "lat": 40.751069,
+                    "lng": -73.940109,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.751069,
+                            "lng": -73.940109
+                        }
+                    ],
+                    "distance": 1081,
+                    "postalCode": "11101",
+                    "cc": "US",
+                    "city": "Long Island City",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "2515 Queens Plz N",
+                        "Long Island City, NY 11101",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4b983a9ff964a520c83535e3",
+                "name": "Big NY Fried Chicken",
+                "location": {
+                    "address": "4035 21st St",
+                    "crossStreet": "at 41st Ave.",
+                    "lat": 40.754058353968475,
+                    "lng": -73.9423292260594,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.754058353968475,
+                            "lng": -73.9423292260594
+                        }
+                    ],
+                    "distance": 1024,
+                    "postalCode": "11101",
+                    "cc": "US",
+                    "city": "Long Island City",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "4035 21st St (at 41st Ave.)",
+                        "Long Island City, NY 11101",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4d4ae6fc7a7b7dea34424761",
+                        "name": "Fried Chicken Joint",
+                        "pluralName": "Fried Chicken Joints",
+                        "shortName": "Fried Chicken",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/friedchicken_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4d791d57ece5a1cd3e41a0a4",
+                "name": "Sazon Restaurant",
+                "location": {
+                    "address": "21-12 36th Ave",
+                    "crossStreet": "btwn 21st & 22nd St",
+                    "lat": 40.75981137217356,
+                    "lng": -73.93671460640574,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.75981137217356,
+                            "lng": -73.93671460640574
+                        }
+                    ],
+                    "distance": 465,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Long Island City",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "21-12 36th Ave (btwn 21st & 22nd St)",
+                        "Long Island City, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d150941735",
+                        "name": "Spanish Restaurant",
+                        "pluralName": "Spanish Restaurants",
+                        "shortName": "Spanish",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/spanish_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4e4cad1cbd413c4cc66b4154",
+                "name": "Roman Pizzeria",
+                "location": {
+                    "address": "3942 21st St",
+                    "lat": 40.755502945278465,
+                    "lng": -73.94124899236242,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.755502945278465,
+                            "lng": -73.94124899236242
+                        }
+                    ],
+                    "distance": 874,
+                    "postalCode": "11101",
+                    "cc": "US",
+                    "city": "Long Island City",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "3942 21st St",
+                        "Long Island City, NY 11101",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d1ca941735",
+                        "name": "Pizza Place",
+                        "pluralName": "Pizza Places",
+                        "shortName": "Pizza",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/pizza_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            },
+            {
+                "id": "4adfa078f964a520457c21e3",
+                "name": "Bartolino's",
+                "location": {
+                    "address": "3415 Broadway",
+                    "crossStreet": "btw 34th & 35th Sts",
+                    "lat": 40.76064306063015,
+                    "lng": -73.92239462214225,
+                    "labeledLatLngs": [
+                        {
+                            "label": "display",
+                            "lat": 40.76064306063015,
+                            "lng": -73.92239462214225
+                        }
+                    ],
+                    "distance": 815,
+                    "postalCode": "11106",
+                    "cc": "US",
+                    "city": "Astoria",
+                    "state": "NY",
+                    "country": "United States",
+                    "formattedAddress": [
+                        "3415 Broadway (btw 34th & 35th Sts)",
+                        "Astoria, NY 11106",
+                        "United States"
+                    ]
+                },
+                "categories": [
+                    {
+                        "id": "4bf58dd8d48988d110941735",
+                        "name": "Italian Restaurant",
+                        "pluralName": "Italian Restaurants",
+                        "shortName": "Italian",
+                        "icon": {
+                            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/italian_",
+                            "suffix": ".png"
+                        },
+                        "primary": true
+                    }
+                ],
+                "delivery": {
+                    "id": "77741",
+                    "url": "https://www.seamless.com/menu/bartolinos-34-15-broadway-ave-astoria/77741?affiliate=1131&utm_source=foursquare-affiliate-network&utm_medium=affiliate&utm_campaign=1131&utm_content=77741",
+                    "provider": {
+                        "name": "seamless",
+                        "icon": {
+                            "prefix": "https://fastly.4sqi.net/img/general/cap/",
+                            "sizes": [
+                                40,
+                                50
+                            ],
+                            "name": "/delivery_provider_seamless_20180129.png"
+                        }
+                    }
+                },
+                "referralId": "v-1573851908",
+                "hasPerk": false
+            }
+        ]
+    }
+}

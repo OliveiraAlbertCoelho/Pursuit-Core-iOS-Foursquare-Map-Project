@@ -146,8 +146,11 @@ extension ViewController: MKMapViewDelegate {
             let  selected = self.locations.filter({$0.name == view.annotation?.title})
         select = selected.first
         }
-        
+    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+        mapView.showsUserLocation = true
     }
+    }
+
 
 //MARK: UICollectionViewDelegate Functions
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -189,7 +192,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         
     }
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let imgWidth = view.bounds.width/2.8
+    let imgWidth = view.bounds.width/2.8
         let imgHeight = imgWidth
         return CGSize(width: imgWidth, height: imgHeight)
     }
@@ -197,5 +200,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let annotation = annotations[indexPath.row]
         mapView.showAnnotations([annotation], animated: true)
         mapView.selectAnnotation(annotation, animated: true)
+        venueSearchBar.resignFirstResponder()
+        citySearchBar.resignFirstResponder()
     }
 }

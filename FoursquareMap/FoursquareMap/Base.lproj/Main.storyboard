@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ciU-9m-azm">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,11 +29,13 @@
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZb-nL-G3L">
                                 <rect key="frame" x="358" y="93" width="56" height="46.5"/>
-                                <color key="backgroundColor" red="0.69511544700000005" green="0.78320533039999995" blue="0.87844616170000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gZb-nL-G3L" secondAttribute="height" multiplier="1:1" id="YjC-11-thc"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="line.horizontal.3" catalog="system"/>
+                                <state key="normal" backgroundImage="line.horizontal.3" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="ultraLight"/>
+                                </state>
                                 <connections>
                                     <action selector="ResultVcAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5jy-dr-CBu"/>
                                 </connections>
@@ -58,16 +60,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="135" height="103"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="adB-IL-ZC5">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="adB-IL-ZC5">
                                                     <rect key="frame" x="0.0" y="0.0" width="135" height="103"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="adB-IL-ZC5" secondAttribute="trailing" id="LrW-I5-IQd"/>
-                                                <constraint firstAttribute="bottom" secondItem="adB-IL-ZC5" secondAttribute="bottom" id="PB8-Q5-hMP"/>
-                                                <constraint firstItem="adB-IL-ZC5" firstAttribute="top" secondItem="eAL-ui-4hP" secondAttribute="top" id="msC-1Z-GH3"/>
-                                                <constraint firstItem="adB-IL-ZC5" firstAttribute="leading" secondItem="eAL-ui-4hP" secondAttribute="leading" id="nDd-J3-7pj"/>
-                                            </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="135" height="103"/>
